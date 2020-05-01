@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Dto\" />
+    <Folder Include="Mapping\" />
+    <Folder Include="Dto\Read\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SafetyAndHealth.Json\SafetyAndHealth.Json.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\SafetyAndHealth.Db\SafetyAndHealth.Db.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Dto\BaseDtoDictionary.cs" />
+    <Compile Remove="Dto\BaseDtoEntity.cs" />
+    <Compile Remove="Dto\PositionDto.cs" />
+    <Compile Remove="Dto\UserDto.cs" />
+    <Compile Remove="Dto\CertificateDto.cs" />
+    <Compile Remove="Dto\UserCertificateDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dto\Read\BaseDtoDictionary.cs" />
+    <Compile Include="Dto\Read\BaseDtoEntity.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Dto\Read\CertificateDto.cs" />
+    <Compile Include="Dto\Read\PositionDto.cs" />
+    <Compile Include="Dto\Read\UserCertificateDto.cs" />
+    <Compile Include="Dto\Read\UserDto.cs" />
+  </ItemGroup>
+</Project>

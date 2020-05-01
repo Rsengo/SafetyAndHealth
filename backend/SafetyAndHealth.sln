@@ -1,0 +1,53 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth", "SafetyAndHealth\SafetyAndHealth.csproj", "{CD6B62F1-52D4-4457-8D7A-15CFBEC26C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth.Db", "SafetyAndHealth.Db\SafetyAndHealth.Db.csproj", "{FFF277B1-31B4-44C9-8814-EF151FA58EE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth.Json", "SafetyAndHealth.Json\SafetyAndHealth.Json.csproj", "{5A676798-9210-4159-85AC-7449316E6B3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth.Mailing", "SafetyAndHealth.Mailing\SafetyAndHealth.Mailing.csproj", "{BDDE1F89-F008-4CC4-BFC8-CED44FE3E923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth.Extensions.Mailing", "SafetyAndHealth.Extensions.Mailing\SafetyAndHealth.Extensions.Mailing.csproj", "{AF49072A-5618-41F8-AA0C-C8ADE739EF2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth.Notifications", "SafetyAndHealth.Notifications\SafetyAndHealth.Notifications.csproj", "{BB10AD46-7DC6-4954-B912-605F7F9E404F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth.Extensions.Notifications", "SafetyAndHealth.Extensions.Notifications\SafetyAndHealth.Extensions.Notifications.csproj", "{F9012058-18C3-4A79-81BF-274AD3A0FFEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD6B62F1-52D4-4457-8D7A-15CFBEC26C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6B62F1-52D4-4457-8D7A-15CFBEC26C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6B62F1-52D4-4457-8D7A-15CFBEC26C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6B62F1-52D4-4457-8D7A-15CFBEC26C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFF277B1-31B4-44C9-8814-EF151FA58EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF277B1-31B4-44C9-8814-EF151FA58EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF277B1-31B4-44C9-8814-EF151FA58EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF277B1-31B4-44C9-8814-EF151FA58EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A676798-9210-4159-85AC-7449316E6B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A676798-9210-4159-85AC-7449316E6B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A676798-9210-4159-85AC-7449316E6B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A676798-9210-4159-85AC-7449316E6B3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDDE1F89-F008-4CC4-BFC8-CED44FE3E923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDE1F89-F008-4CC4-BFC8-CED44FE3E923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDE1F89-F008-4CC4-BFC8-CED44FE3E923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDE1F89-F008-4CC4-BFC8-CED44FE3E923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF49072A-5618-41F8-AA0C-C8ADE739EF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF49072A-5618-41F8-AA0C-C8ADE739EF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF49072A-5618-41F8-AA0C-C8ADE739EF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF49072A-5618-41F8-AA0C-C8ADE739EF2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB10AD46-7DC6-4954-B912-605F7F9E404F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB10AD46-7DC6-4954-B912-605F7F9E404F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB10AD46-7DC6-4954-B912-605F7F9E404F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB10AD46-7DC6-4954-B912-605F7F9E404F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9012058-18C3-4A79-81BF-274AD3A0FFEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9012058-18C3-4A79-81BF-274AD3A0FFEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9012058-18C3-4A79-81BF-274AD3A0FFEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9012058-18C3-4A79-81BF-274AD3A0FFEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
