@@ -33,6 +33,9 @@
     <ProjectReference Include="..\SafetyAndHealth.Extensions.Mailing\SafetyAndHealth.Extensions.Mailing.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\SafetyAndHealth.Extensions.Specified\SafetyAndHealth.Extensions.Specified.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Dto\PositionDto.cs" />

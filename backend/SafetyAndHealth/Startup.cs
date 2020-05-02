@@ -13,7 +13,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SafetyAndHealth.Db;
+using SafetyAndHealth.Extensions.Mailing;
+using SafetyAndHealth.Extensions.Specified;
 using SafetyAndHealth.Json;
+using SafetyAndHealth.Middlewares.MvcFilters;
 
 namespace SafetyAndHealth
 {
@@ -29,24 +32,21 @@ namespace SafetyAndHealth
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationDbContext<ApplicationDbContext>(
+                Configuration["DbConnectionString"]);
+
+            services.AddScheduler(Configuration["DbConnectionString"]);
+
+            services.AddMailService();
+
+            // TODO add notifications
+
             services.AddControllers(config =>
             {
                 config.Filters.Add<HttpGlobalExceptionFilter>();
             }).AddJsonOptions(opts => JsonSerializerConfigurator.Configure(opts.JsonSerializerOptions));
 
-            services.AddDbContext<ApplicationDbContext>(opts =>
-            {
-                opts.UseNpgsql(Configuration["dbConnectionString"], dbOpts =>
-                {
-                    var migrationAssemblyName = typeof(ApplicationDbContext)
-                        .Assembly
-                        .GetName()
-                        .Name;
-
-                    dbOpts.MigrationsAssembly(migrationAssemblyName);
-                    dbOpts.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
-                });
-            });
+            services.AddSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +56,8 @@ namespace SafetyAndHealth
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseScheduler();
 
             // app.UseHttpsRedirection();
 
@@ -67,6 +69,8 @@ namespace SafetyAndHealth
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
         }
     }
 }

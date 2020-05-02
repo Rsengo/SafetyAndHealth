@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Filters;
 
 // TODO: add logger
-namespace SafetyAndHealth.Http.MvcFilters
+namespace SafetyAndHealth.Middlewares.MvcFilters
 {
     public class HttpGlobalExceptionFilter : IExceptionFilter
     {

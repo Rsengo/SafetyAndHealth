@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth.IO", "Safet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth.Middlewares", "SafetyAndHealth.Middlewares\SafetyAndHealth.Middlewares.csproj", "{40C02689-FED1-4BE0-9B11-3C3C7CD53464}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyAndHealth.Extensions.Specified", "SafetyAndHealth.Extensions.Specified\SafetyAndHealth.Extensions.Specified.csproj", "{123D2911-73AE-487B-BBDB-4B1927666523}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,5 +63,9 @@ Global
 		{40C02689-FED1-4BE0-9B11-3C3C7CD53464}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40C02689-FED1-4BE0-9B11-3C3C7CD53464}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40C02689-FED1-4BE0-9B11-3C3C7CD53464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{123D2911-73AE-487B-BBDB-4B1927666523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{123D2911-73AE-487B-BBDB-4B1927666523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{123D2911-73AE-487B-BBDB-4B1927666523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{123D2911-73AE-487B-BBDB-4B1927666523}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
