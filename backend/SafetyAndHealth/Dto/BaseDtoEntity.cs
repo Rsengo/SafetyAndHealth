@@ -1,7 +1,7 @@
 ﻿using System;
-namespace SafetyAndHealth.Dto.Read
+namespace SafetyAndHealth.Dto
 {
-    public class BaseDtoEntity
+    public abstract class BaseDtoEntity
     {
         public long Id { get; set; }
     }

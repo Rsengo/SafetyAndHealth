@@ -25,6 +25,6 @@ namespace SafetyAndHealth.Db.Models
 
         public Certificate Certificate { get; set; }
 
-        public long SertificateId { get; set; }
+        public long CertificateId { get; set; }
     }
 }

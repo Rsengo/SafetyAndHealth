@@ -1,15 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SafetyAndHealth.Db;
+using SafetyAndHealth.Json;
 
 namespace SafetyAndHealth
 {
@@ -25,7 +29,24 @@ namespace SafetyAndHealth
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(config =>
+            {
+                config.Filters.Add<HttpGlobalExceptionFilter>();
+            }).AddJsonOptions(opts => JsonSerializerConfigurator.Configure(opts.JsonSerializerOptions));
+
+            services.AddDbContext<ApplicationDbContext>(opts =>
+            {
+                opts.UseNpgsql(Configuration["dbConnectionString"], dbOpts =>
+                {
+                    var migrationAssemblyName = typeof(ApplicationDbContext)
+                        .Assembly
+                        .GetName()
+                        .Name;
+
+                    dbOpts.MigrationsAssembly(migrationAssemblyName);
+                    dbOpts.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,11 +57,11 @@ namespace SafetyAndHealth
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            // app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
