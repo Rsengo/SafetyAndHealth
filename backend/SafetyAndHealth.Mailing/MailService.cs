@@ -11,10 +11,8 @@ using SafetyAndHealth.Mailing.Factories;
 
 namespace SafetyAndHealth.Mailing
 {
-    using IMailService = Abstractions.IMailService;
-
     /// <inheritdoc />
-    public class MailService : IMailService
+    public class MailService : Abstractions.IMailService
     {
         private bool _disposed;
 
