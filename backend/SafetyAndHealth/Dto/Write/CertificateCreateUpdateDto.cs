@@ -6,7 +6,7 @@ namespace SafetyAndHealth.Dto.Write
 {
     public class CertificateCreateUpdateDto : BaseDtoDictionary
     {
-        [JsonConverter(typeof(DateConverter))]
+        [JsonConverter(typeof(TimeSpanConverter))]
         public TimeSpan ValidationTime { get; set; }
 
         public bool HasGroup { get; set; }

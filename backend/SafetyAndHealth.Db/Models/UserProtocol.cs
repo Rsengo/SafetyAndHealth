@@ -1,13 +1,11 @@
 ﻿using System;
 namespace SafetyAndHealth.Db.Models
 {
-    public class UserCertificate : RelationalEntity
+    public class UserProtocol : RelationalEntity
     {
         public string Number { get; set; }
 
         public DateTime StartDate { get; set; }
-
-        public long? Group { get; set; }
 
         public User User { get; set; }
 

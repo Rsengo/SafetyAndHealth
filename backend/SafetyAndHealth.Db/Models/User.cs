@@ -16,5 +16,7 @@ namespace SafetyAndHealth.Db.Models
         public string LastName { get; set; }
 
         public ICollection<UserCertificate> UserCertificates { get; set; }
+
+        public ICollection<UserProtocol> UserProtocols { get; set; }
     }
 }

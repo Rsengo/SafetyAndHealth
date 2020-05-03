@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -12,24 +11,26 @@ using SafetyAndHealth.Dto.Write;
 namespace SafetyAndHealth.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/usercertificate")]
     public class UserCertificateController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
         private readonly IMapper _mapper;
 
-        public UserCertificateController(ApplicationDbContext context, IMapper mapper)
+        public UserCertificateController(
+            ApplicationDbContext context,
+            IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var entities = await _context.UserCertificates
-                .Include(x => x.CertificateFile)
-                .Include(x => x.ProtocolFile)
+                .Include(x => x.File)
                 .ToListAsync();
             var dto = _mapper.Map<IEnumerable<UserDto>>(entities);
 
@@ -49,13 +50,7 @@ namespace SafetyAndHealth.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UserCertificateCreateUpdateDto dto)
         {
-            var existingCertificate = await _context.UserCertificates
-                .SingleOrDefaultAsync(x => x.Id == dto.Id);
             var userCertificate = _mapper.Map<UserCertificate>(dto);
-
-            userCertificate.CertificateFileId = existingCertificate.CertificateFileId;
-            userCertificate.ProtocolFileId = existingCertificate.ProtocolFileId;
-
             _context.UserCertificates.Update(userCertificate);
             await _context.SaveChangesAsync();
 

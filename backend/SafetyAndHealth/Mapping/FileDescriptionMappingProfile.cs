@@ -2,6 +2,7 @@
 using AutoMapper;
 using SafetyAndHealth.Db.Models;
 using SafetyAndHealth.Dto.Read;
+using SafetyAndHealth.IO;
 
 namespace SafetyAndHealth.Mapping
 {
@@ -10,6 +11,7 @@ namespace SafetyAndHealth.Mapping
         public FileDescriptionMappingProfile()
         {
             CreateMap<FileDescription, FileDescriptionDto>();
+            CreateMap<FileInfo, FileDescription>();
         }
     }
 }

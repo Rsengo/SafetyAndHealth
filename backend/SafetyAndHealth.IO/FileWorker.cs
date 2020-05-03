@@ -1,38 +1,40 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using SafetyAndHealth.IO.Abstract;
 
 namespace SafetyAndHealth.IO
 {
-    public class FileWorker : IFIleWorker
+    public class FileWorker : IFileWorker
     {
-        public FileWorker()
+        public Stream ReadFile(string path)
         {
+            return new FileStream(path, FileMode.Open);
         }
 
-        public Task<Stream> ReadFile(string path)
+        public void RemoveFile(string path)
         {
-            throw new System.NotImplementedException();
+            if (File.Exists(path))
+                File.Delete(path);
         }
 
-        public Task RemoveFile(string path)
+        public async Task<FileInfo> SaveFileAsync(string path, IFormFile formFile)
         {
-            throw new System.NotImplementedException();
-        }
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
 
-        public Task SaveFile(string path, byte[] data)
-        {
-            throw new System.NotImplementedException();
-        }
+            var filePath = Path.Combine(path, formFile.FileName);
 
-        public Task SaveFile(string path, Stream stream)
-        {
-            throw new System.NotImplementedException();
-        }
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await formFile.CopyToAsync(fileStream);
+            }
 
-        public Task UpdateFile(string path)
-        {
-            throw new System.NotImplementedException();
+            return new FileInfo
+            {
+                Name = formFile.FileName,
+                Path = filePath
+            };
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -12,14 +11,16 @@ using SafetyAndHealth.Dto.Write;
 namespace SafetyAndHealth.Controllers
 {
     [ApiController]
-    [Route("api/certificate")]
-    public class CertificateController : ControllerBase
+    [Route("api/userprotocol")]
+    public class UserProtocolController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
         private readonly IMapper _mapper;
 
-        public CertificateController(ApplicationDbContext context, IMapper mapper)
+        public UserProtocolController(
+            ApplicationDbContext context,
+            IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -28,27 +29,29 @@ namespace SafetyAndHealth.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var entities = await _context.Certificates.ToListAsync();
-            var dto = _mapper.Map<IEnumerable<CertificateDto>>(entities);
+            var entities = await _context.UserProtocols
+                .Include(x => x.File)
+                .ToListAsync();
+            var dto = _mapper.Map<IEnumerable<UserDto>>(entities);
 
             return Ok(dto);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CertificateCreateUpdateDto dto)
+        public async Task<IActionResult> Create([FromBody] UserProtocolCreateUpdateDto dto)
         {
-            var certificate = _mapper.Map<Certificate>(dto);
-            _context.Certificates.Add(certificate);
+            var userProtocol = _mapper.Map<UserProtocol>(dto);
+            _context.UserProtocols.Add(userProtocol);
             await _context.SaveChangesAsync();
 
             return Ok();
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] CertificateCreateUpdateDto dto)
+        public async Task<IActionResult> Update([FromBody] UserProtocolCreateUpdateDto dto)
         {
-            var certificate = _mapper.Map<Certificate>(dto);
-            _context.Certificates.Update(certificate);
+            var userProtocol = _mapper.Map<UserProtocol>(dto);
+            _context.UserProtocols.Update(userProtocol);
             await _context.SaveChangesAsync();
 
             return Ok();
@@ -57,12 +60,12 @@ namespace SafetyAndHealth.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] long id)
         {
-            var certificate = new Certificate()
+            var userProtocol = new UserProtocol()
             {
                 Id = id
             };
 
-            _context.Remove(certificate);
+            _context.Remove(userProtocol);
             await _context.SaveChangesAsync();
 
             return Ok();

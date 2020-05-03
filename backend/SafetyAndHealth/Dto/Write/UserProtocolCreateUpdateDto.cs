@@ -4,13 +4,11 @@ using SafetyAndHealth.Json.Converters;
 
 namespace SafetyAndHealth.Dto.Write
 {
-    public class UserCertificateCreateUpdateDto : BaseDtoEntity
+    public class UserProtocolCreateUpdateDto
     {
         public string Number { get; set; }
 
         public DateTime StartDate { get; set; }
-
-        public long? Group { get; set; }
 
         public string UserId { get; set; }
 

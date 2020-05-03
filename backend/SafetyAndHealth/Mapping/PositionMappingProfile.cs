@@ -2,6 +2,7 @@
 using AutoMapper;
 using SafetyAndHealth.Db.Models;
 using SafetyAndHealth.Dto.Read;
+using SafetyAndHealth.Dto.Write;
 
 namespace SafetyAndHealth.Mapping
 {
@@ -10,6 +11,7 @@ namespace SafetyAndHealth.Mapping
         public PositionMappingProfile()
         {
             CreateMap<Position, PositionDto>();
+            CreateMap<PositionCreateUpdateDto, Position>();
         }
     }
 }

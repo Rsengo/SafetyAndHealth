@@ -12,7 +12,7 @@ using SafetyAndHealth.Dto.Write;
 namespace SafetyAndHealth.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/position")]
     public class PositionController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -25,6 +25,7 @@ namespace SafetyAndHealth.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var entities = await _context.Positions.ToListAsync();

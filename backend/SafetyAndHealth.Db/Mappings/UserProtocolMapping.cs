@@ -4,9 +4,9 @@ using SafetyAndHealth.Db.Models;
 
 namespace SafetyAndHealth.Db.Mappings
 {
-    public class UserCertificateMapping : IEntityTypeConfiguration<UserCertificate>
+    public class UserProtocolMapping : IEntityTypeConfiguration<UserProtocol>
     {
-        public void Configure(EntityTypeBuilder<UserCertificate> builder)
+        public void Configure(EntityTypeBuilder<UserProtocol> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
@@ -26,7 +26,7 @@ namespace SafetyAndHealth.Db.Mappings
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(x => x.User)
-                .WithMany(x => x.UserCertificates)
+                .WithMany(x => x.UserProtocols)
                 .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
         }

@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using SafetyAndHealth.Db.Models;
 using SafetyAndHealth.Dto.Read;
+using SafetyAndHealth.Dto.Write;
 
 namespace SafetyAndHealth.Mapping
 {
@@ -7,7 +9,8 @@ namespace SafetyAndHealth.Mapping
     {
         public CertificateMappingProfile()
         {
-            CreateMap<CertificateMappingProfile, CertificateDto>();
+            CreateMap<Certificate, CertificateDto>();
+            CreateMap<CertificateCreateUpdateDto, Certificate>();
         }
     }
 }

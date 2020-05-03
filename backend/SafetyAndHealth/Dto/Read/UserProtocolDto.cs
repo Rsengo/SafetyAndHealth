@@ -4,14 +4,12 @@ using SafetyAndHealth.Json.Converters;
 
 namespace SafetyAndHealth.Dto.Read
 {
-    public class UserCertificateDto
+    public class UserProtocolDto
     {
         public string Number { get; set; }
 
         [JsonConverter(typeof(DateConverter))]
         public DateTime StartDate { get; set; }
-
-        public long? Group { get; set; }
 
         public string UserId { get; set; }
 

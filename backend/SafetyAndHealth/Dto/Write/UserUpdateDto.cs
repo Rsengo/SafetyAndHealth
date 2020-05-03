@@ -1,13 +1,11 @@
 ﻿using System;
-namespace SafetyAndHealth.Dto.Read
+namespace SafetyAndHealth.Dto.Write
 {
-    public class UserDto
+    public class UserUpdateDto
     {
         public string Id { get; set; }
 
         public string Email { get; set; }
-
-        public string UserName { get; set; }
 
         public long? PositionId { get; set; }
 

@@ -12,5 +12,7 @@ namespace SafetyAndHealth.Db
         public DbSet<Position> Positions { get; set; }
 
         public DbSet<UserCertificate> UserCertificates { get; set; }
+
+        public DbSet<UserProtocol> UserProtocols { get; set; }
     }
 }
