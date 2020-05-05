@@ -6,5 +6,7 @@ namespace SafetyAndHealth.Services.Abstract
         string CreateCertificateDirectoryPath(string userId, long certificateId);
 
         string CreateProtocolDirectoryPath(string userId, long certificateId);
+
+        string CreateDocumentTemplateDirectory();
     }
 }

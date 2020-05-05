@@ -8,5 +8,7 @@ namespace SafetyAndHealth
         public string CertificateFolder { get; set; }
 
         public string ProtocolFolder { get; set; }
+
+        public string DocumentTemplateFolder { get; set; }
     }
 }

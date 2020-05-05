@@ -1,10 +1,9 @@
 ﻿using System;
 namespace SafetyAndHealth.Authorization
 {
-    public class SystemPositions
+    public static class SystemPositions
     {
-        public SystemPositions()
-        {
-        }
+        public const string LABOR_SAFETY_OFFICER =
+            "Ответственный по охране труда";
     }
 }

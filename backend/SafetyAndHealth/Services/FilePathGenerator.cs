@@ -23,6 +23,13 @@ namespace SafetyAndHealth.Services
                 _appSettings.CertificateFolder);
         }
 
+        public string CreateDocumentTemplateDirectory()
+        {
+            return Path.Combine(
+                _appSettings.FileBasePath,
+                _appSettings.DocumentTemplateFolder);
+        }
+
         public string CreateProtocolDirectoryPath(string userId, long certificateId)
         {
             return Path.Combine(

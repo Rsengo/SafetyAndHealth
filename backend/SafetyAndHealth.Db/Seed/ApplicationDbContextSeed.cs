@@ -29,7 +29,8 @@ namespace SafetyAndHealth.Db.Seed
 
             var position = new Position
             {
-                Name = "Админ"
+                Name = SystemPositions.LABOR_SAFETY_OFFICER,
+                IsSystem = false
             };
 
             ctx.Positions.Add(position);

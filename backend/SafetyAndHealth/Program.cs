@@ -19,9 +19,9 @@ namespace SafetyAndHealth
             CreateHost(args)
                 .MigrateDbContext<ApplicationDbContext>((ctx, _) =>
                 {
-                    new ApplicationDbContextSeed()
-                        .SeedAsync(ctx)
-                        .Wait();
+                   new ApplicationDbContextSeed()
+                       .SeedAsync(ctx)
+                       .Wait();
                 })
                 //.MigrateDbContext<ConfigurationDbContext>((context, services) =>
                 //{

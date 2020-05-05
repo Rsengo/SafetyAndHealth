@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\SafetyAndHealth.Notifications\SafetyAndHealth.Notifications.csproj" />
   </ItemGroup>

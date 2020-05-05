@@ -14,5 +14,7 @@ namespace SafetyAndHealth.Db
         public DbSet<UserCertificate> UserCertificates { get; set; }
 
         public DbSet<UserProtocol> UserProtocols { get; set; }
+
+        public DbSet<DocumentTemplate> DocumentTemplates { get; set; }
     }
 }

@@ -45,6 +45,8 @@ namespace SafetyAndHealth
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddApplicationCors();
+
             services.AddScheduler(Configuration["DbConnectionString"]);
             // TODO add notifications
 
@@ -65,7 +67,7 @@ namespace SafetyAndHealth
                 config.Filters.Add<HttpGlobalExceptionFilter>();
             }).AddJsonOptions(opts => JsonSerializerConfigurator.Configure(opts.JsonSerializerOptions));
 
-            services.AddSwagger();
+            services.AddApplicationSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,18 +80,20 @@ namespace SafetyAndHealth
 
             app.UseScheduler();
 
-            // app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
+
+            app.UseCors();
+
+            app.UseApplicationSwagger();
 
             app.UseRouting();
 
-            // app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-
-            app.UseSwagger();
         }
     }
 }

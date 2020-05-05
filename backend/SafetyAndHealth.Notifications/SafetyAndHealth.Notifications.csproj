@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
   <ItemGroup>
     <Folder Include="Abstractions\" />
     <Folder Include="Interanals\" />

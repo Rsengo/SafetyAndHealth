@@ -13,7 +13,7 @@ namespace SafetyAndHealth.Extensions.Specified
         ///     Специализированный метод для регистрации сваггера, настроенных для ЗИС3.
         /// </summary>
         /// <param name="services"> Набор сервисов приложения. </param>
-        public static void AddSwagger(this IServiceCollection services)
+        public static void AddApplicationSwagger(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
             {
@@ -25,7 +25,7 @@ namespace SafetyAndHealth.Extensions.Specified
         ///     Специализированный метод для добавления промежуточных сервисов сваггера, настроенных для ЗИС3.
         /// </summary>
         /// <param name="app"> Построитель конфигурации промежуточных сервисов приложения. </param>
-        public static void UseSwagger(this IApplicationBuilder app)
+        public static void UseApplicationSwagger(this IApplicationBuilder app)
         {
             app.UseSwagger();
 

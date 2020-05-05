@@ -2,5 +2,6 @@
 {
     public class Position : RelationalDictionary
     {
+        public bool IsSystem { get; set; }
     }
 }
