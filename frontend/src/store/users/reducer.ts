@@ -6,10 +6,11 @@ import {
     UsersActionTypes, 
     LoadUserListSuccessAction 
 } from './types';
-import { UsersState, usersDefaultState } from './state';
+import UsersState from './state';
+import PreloadedState from '../../constants/PreloadedState.json';
 
 const reducer: Reducer<UsersState, UsersActionTypes> = (
-    state: UsersState = usersDefaultState,
+    state: UsersState = PreloadedState.users,
     action: UsersActionTypes
 ) => {
     switch (action.type) {

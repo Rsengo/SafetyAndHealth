@@ -1,5 +1,5 @@
 import { Action, Store } from 'redux';
-import { UsersState } from './users/state';
+import UsersState from './users/state';
 import ApiClient from '../api/client/ApiClient';
 
 export interface ReduxState {
