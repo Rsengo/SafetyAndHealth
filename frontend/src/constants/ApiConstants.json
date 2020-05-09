@@ -1,0 +1,50 @@
+{
+    "baseUrl": "https://localhost:5001/api",
+    "formHeaders": {
+        "Content-Type": "multipart/form-data"
+    },
+    "routes": {
+        "certificate": {
+            "getAll": "certificate",
+            "create": "certificate",
+            "update": "certificate",
+            "delete": "certificate"
+        },
+        "position": {
+            "getAll": "position",
+            "create": "position",
+            "update": "position",
+            "delete": "position"
+        },
+        "user": {
+            "getAll": "user",
+            "create": "user/registration",
+            "update": "user",
+            "delete": "user"
+        },
+        "documentTemplate": {
+            "getAll": "documentTemplate",
+            "download": "documentTemplate/download",
+            "create": "documentTemplate",
+            "delete": "documentTemplate"
+        },
+        "userCertificate": {
+            "getAll": "userCertificate",
+            "create": "userCertificate",
+            "update": "userCertificate",
+            "delete": "userCertificate",
+            "dowloadFile": "userCertificate/file",
+            "createFile": "userCertificate/file",
+            "deleteFile": "userCertificate/file"
+        },
+        "userProtocol": {
+            "getAll": "userProtocol",
+            "create": "userProtocol",
+            "update": "userProtocol",
+            "delete": "userProtocol",
+            "dowloadFile": "userProtocol/file",
+            "createFile": "userProtocol/file",
+            "deleteFile": "userProtocol/file"
+        }
+    }
+}

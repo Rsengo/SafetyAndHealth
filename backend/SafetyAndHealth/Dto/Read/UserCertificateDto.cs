@@ -4,7 +4,7 @@ using SafetyAndHealth.Json.Converters;
 
 namespace SafetyAndHealth.Dto.Read
 {
-    public class UserCertificateDto
+    public class UserCertificateDto: BaseDtoEntity
     {
         public string Number { get; set; }
 
