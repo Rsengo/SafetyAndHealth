@@ -28,7 +28,7 @@ const reducer: Reducer<UsersState, UsersActionTypes> = (
         case LOAD_USER_LIST_ERROR:
             return {
                 ...state,
-                userList: usersDefaultState.userList,
+                userList: PreloadedState.users,
                 userListLoading: false
             };
 
