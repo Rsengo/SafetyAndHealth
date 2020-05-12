@@ -1,4 +1,3 @@
-import { AxiosRequestConfig } from 'axios';
 import BaseRequester from './BaseRequester';
 import ApiConstants from '../../../constants/ApiConstants.json';
 import { UserCertificateCreateUpdateDto, UserCertificateDto } from '../../models/UserCertificate';
@@ -6,10 +5,6 @@ import { FileCreateUpdateDto } from '../../models/FileModel';
 import { FileDescriptionDto } from '../../models/FileDescription';
 
 class UserCertificateRequester extends BaseRequester {
-    constructor(config: AxiosRequestConfig) {
-        super(config);
-    }
-
     getAll(): Promise<UserCertificateDto[]> {
         return this._get<UserCertificateDto[]>(ApiConstants.routes.userCertificate.getAll);
     }

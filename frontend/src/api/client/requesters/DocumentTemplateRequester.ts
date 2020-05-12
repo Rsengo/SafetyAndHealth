@@ -1,13 +1,8 @@
-import { AxiosRequestConfig } from 'axios';
 import BaseRequester from './BaseRequester';
 import ApiConstants from '../../../constants/ApiConstants.json';
 import { DocumentTemplateDto, DocumentTemplateCreateUpdateDto } from '../../models/DocumentTemplate';
 
 class DocumentTemplateRequester extends BaseRequester {
-    constructor(config: AxiosRequestConfig) {
-        super(config);
-    }
-
     getAll(): Promise<DocumentTemplateDto[]> {
         return this._get<DocumentTemplateDto[]>(ApiConstants.routes.documentTemplate.getAll);
     }

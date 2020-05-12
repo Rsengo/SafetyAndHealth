@@ -18,7 +18,7 @@ const reducer: Reducer<UsersState, UsersActionTypes> = (
             return { ...state, userListLoading: true };
         
         case LOAD_USER_LIST_SUCCESS:
-            const typedAction = <LoadUserListSuccessAction>action; // TODO
+            const typedAction = action as LoadUserListSuccessAction;
             return {
                 ...state,
                 userList: typedAction.payload,
@@ -28,8 +28,7 @@ const reducer: Reducer<UsersState, UsersActionTypes> = (
         case LOAD_USER_LIST_ERROR:
             return {
                 ...state,
-                userList: PreloadedState.users,
-                userListLoading: false
+                ...PreloadedState.users
             };
 
         default:

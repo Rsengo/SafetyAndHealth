@@ -1,35 +1,66 @@
 import React from 'react';
-import { styled } from '@material-ui/core/styles';
+import UsersTable from './components/usersTable/UsersTable';
+import { UserTableEntity } from './components/usersTable/interfaces';
+import BasePage from './components/basePage/BasePage';
 
-import {
-  List, 
-  ListItem, 
-  ListItemIcon, 
-  ListItemText
-} from '@material-ui/core'
+const mockUser: UserTableEntity = {
+  id: '1',
+  userName: 'test login',
+  email: 'some email',
+  firstName: 'f_name',
+  lastName: 'l_name',
+  position: 'admin',
+  contactPhoneNumber: '+7(999)999-55-66'
+};
 
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-
-const Container = styled('div')({
-  display: 'flex'
-});
+const mockData: UserTableEntity[] = [
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+  mockUser,
+];
 
 const App: React.FC = () => {
-  const [open, setOpen] = React.useState<boolean>(false);
+  const [open, setOpen] = React.useState(false);
 
   return (
-    <Container>
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-        ))}
-      </List>
-      <button onClick={() => setOpen(!open)}>kek</button>
-    </Container>
+    <BasePage
+      sideMenuOpened={open}
+      onSideMenuOpen={() => setOpen(true)}
+      onSideMenuClose={() => setOpen(false)}
+    >
+      <UsersTable
+        searchable
+        data={mockData}
+        searchValue=''
+        onSearchChange={() => {}}
+      />
+    </BasePage>
   );
 };
 

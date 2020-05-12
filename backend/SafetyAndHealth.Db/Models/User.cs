@@ -15,6 +15,9 @@ namespace SafetyAndHealth.Db.Models
 
         public string LastName { get; set; }
 
+        //TODO format
+        public string ContactPhoneNumber { get; set; }
+
         public ICollection<UserCertificate> UserCertificates { get; set; }
 
         public ICollection<UserProtocol> UserProtocols { get; set; }

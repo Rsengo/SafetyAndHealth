@@ -16,5 +16,8 @@ namespace SafetyAndHealth.Dto.Write
         public string MiddleName { get; set; }
 
         public string LastName { get; set; }
+
+        // TODO: format
+        public string ContactPhoneNumber { get; set; }
     }
 }

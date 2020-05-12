@@ -1,4 +1,3 @@
-import { AxiosRequestConfig } from 'axios';
 import BaseRequester from './BaseRequester';
 import ApiConstants from '../../../constants/ApiConstants.json';
 import { UserProtocolDto, UserProtocolCreateUpdateDto } from '../../models/UserProtocol';
@@ -6,10 +5,6 @@ import { FileCreateUpdateDto } from '../../models/FileModel';
 import { FileDescriptionDto } from '../../models/FileDescription';
 
 class UserProtocolRequester extends BaseRequester {
-    constructor(config: AxiosRequestConfig) {
-        super(config);
-    }
-
     getAll(): Promise<UserProtocolDto[]> {
         return this._get<UserProtocolDto[]>(ApiConstants.routes.userProtocol.getAll);
     }

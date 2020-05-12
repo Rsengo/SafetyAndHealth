@@ -1,12 +1,8 @@
-import { AxiosRequestConfig } from 'axios';
 import BaseRequester from './BaseRequester';
 import ApiConstants from '../../../constants/ApiConstants.json';
 import { PositionDto, PositionCreateUpdateDto } from '../../models/Position';
 
 class PositionRequester extends BaseRequester {
-    constructor(config: AxiosRequestConfig) {
-        super(config);
-    }
 
     getAll(): Promise<PositionDto[]> {
         return this._get<PositionDto[]>(ApiConstants.routes.position.getAll);

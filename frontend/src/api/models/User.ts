@@ -1,45 +1,51 @@
 export interface UserDto {
-    Id: string;
+    id: string;
 
-    Email: string;
+    email: string;
 
-    UserName: string;
+    userName: string;
 
-    PositionId: number | null;
+    positionId?: number;
 
-    FirstName: string;
+    firstName: string;
 
-    MiddleName: string;
+    middleName?: string;
 
-    LastName: string;
+    lastName: string;
+
+    contactPhoneNumber?: string;
 }
 
 export interface UserCreateDto {
-    UserName: string;
+    userName: string;
 
-    Password: string;
+    password: string;
 
-    Email: string;
+    email: string;
 
-    PositionId: number | null;
+    positionId?: number;
 
-    FirstName: string;
+    firstName: string;
 
-    MiddleName: string;
+    middleName?: string;
 
-    LastName: string;
+    lastName: string;
+
+    contactPhoneNumber?: string;
 }
 
 export interface UserUpdateDto {
-    Id: string;
+    id: string;
 
-    Email: string;
+    email: string;
 
-    PositionId: number | null;
+    positionId?: number;
 
-    FirstName: string;
+    firstName: string;
 
-    MiddleName: string;
+    middleName?: string;
 
-    LastName: string;
+    lastName: string;
+
+    contactPhoneNumber?: string;
 }
