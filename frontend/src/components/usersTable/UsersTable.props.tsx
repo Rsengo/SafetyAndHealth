@@ -1,7 +1,7 @@
 import React from 'react';
-import AddBox from '@material-ui/icons/AddBox';
-import DeleteOutline from '@material-ui/icons/DeleteOutline';
-import Edit from '@material-ui/icons/Edit';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import DescriptionIcon from '@material-ui/icons/DescriptionOutlined';
 import {Column, Action} from 'material-table';
 import { UserTableEntity } from './interfaces';
 
@@ -35,18 +35,18 @@ export const columns: Column<UserTableEntity>[] = [
 
 export const actions: Action<UserTableEntity>[] = [
     {
-        icon: () => (<AddBox />),
+        icon: () => (<PersonAddIcon />),
         tooltip: 'Добавить пользователя',
         isFreeAction: true,
         onClick: () => alert("You want to add a new row")
     },
     {
-        icon: () => (<Edit />),
-        tooltip: 'Редактировать пользователя',
+        icon: () => (<DescriptionIcon />),
+        tooltip: 'Документы пользователя',
         onClick: () => alert("You want to edit the row")
     },
     {
-        icon: () => (<DeleteOutline color='error' />),
+        icon: () => (<DeleteOutlineIcon color='error' />),
         tooltip: 'Удалить пользователя',
         onClick: () => alert("You want to delete the row")
     }

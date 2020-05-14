@@ -2,29 +2,29 @@ import { FileDescriptionDto } from "./FileDescription";
 import { BaseDtoEntity } from "./BaseModel";
 
 export interface UserCertificateDto extends BaseDtoEntity {
-    Number: string;
+    number: string;
 
-    StartDate: Date | string;
+    startDate: Date | string;
 
-    Group: number | null;
+    group: number | null;
 
-    UserId: string;
+    userId: string;
 
-    File: FileDescriptionDto;
+    file: FileDescriptionDto;
 
-    CertificateId: number;
+    certificateId: number;
 
-    ExpiresDate: Date | string | null;
+    expiresDate: Date | string | null;
 }
 
 export interface UserCertificateCreateUpdateDto extends BaseDtoEntity {
-    Number: string;
+    number: string;
 
-    StartDate: Date | string;
+    startDate: Date | string;
 
-    Group: number | null;
+    group: number | null;
 
-    UserId: string;
+    userId: string;
 
-    CertificateId: number;
+    certificateId: number;
 }

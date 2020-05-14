@@ -3,6 +3,7 @@ import createSagaMiddleware, { SagaMiddleware, Saga } from 'redux-saga'
 import { all } from 'redux-saga/effects';
 import { ReduxAction, ReduxStore, ReduxState, SagaExtraParams } from './interfaces';
 import usersReducer from './users/reducer';
+import navigationReducer from './navigation/reducer';
 import usersSaga from './users/sagas';
 
 // TODO all sagas typing
@@ -14,7 +15,8 @@ function* rootSaga(extra: SagaExtraParams) {
 
 const configureStore = (sagaExtra: SagaExtraParams): ReduxStore => {
     const rootReducer: Reducer<ReduxState, ReduxAction> = combineReducers({
-        users: usersReducer
+        users: usersReducer,
+        navigation: navigationReducer
     });
     const sagaMiddleware: SagaMiddleware = createSagaMiddleware(); //TODO generic type
 

@@ -2,25 +2,25 @@ import { FileDescriptionDto } from "./FileDescription";
 import { BaseDtoEntity } from "./BaseModel";
 
 export interface UserProtocolDto extends BaseDtoEntity {
-    Number: string;
+    number: string;
 
-    StartDate: Date | string;
+    startDate: Date | string;
 
-    UserId: string;
+    userId: string;
 
-    File: FileDescriptionDto;
+    file: FileDescriptionDto;
 
-    CertificateId: number;
+    certificateId: number;
 
-    ExpiresDate: Date | string | null;
+    expiresDate: Date | string | null;
 }
 
 export interface UserProtocolCreateUpdateDto {
-    Number: string;
+    number: string;
 
-    StartDate: Date | string;
+    startDate: Date | string;
 
-    UserId: string;
+    userId: string;
 
-    CertificateId: number;
+    certificateId: number;
 }

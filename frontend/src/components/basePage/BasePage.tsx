@@ -1,6 +1,6 @@
 import React from 'react';
-import SideMenu from '../shared/sideMenu/SideMenu';
-import AppBar from '../shared/appBar/AppBar';
+import SideMenu from '../sideMenu/SideMenu';
+import AppBar from '../appBar/AppBar';
 import { BasePageProps } from './interfaces';
 import { Container, ContentContainer } from './styled';
 

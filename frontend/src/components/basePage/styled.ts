@@ -8,6 +8,7 @@ export const Container = styled('div')({
 //TODO: set const type and prop type
 export const ContentContainer = styled('div')(({theme}: { theme: Theme }) => ({
     display: 'flex',
-    marginTop: 64, // TODO from theme 
-    width: '100%'
+    marginTop: 56, // TODO from theme 
+    width: '100%',
+    padding: 8 // TODO from theme 
 }));

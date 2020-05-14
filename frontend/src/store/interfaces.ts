@@ -1,9 +1,11 @@
 import { Action, Store } from 'redux';
 import UsersState from './users/state';
+import NavigationState from './navigation/state';
 import ApiClient from '../api/client/ApiClient';
 
 export interface ReduxState {
-    users: UsersState
+    users: UsersState,
+    navigation: NavigationState
 }
 
 export interface ReduxAction<TPayload extends any = any> extends Action<string> {

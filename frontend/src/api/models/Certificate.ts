@@ -1,13 +1,13 @@
 import { BaseDtoDictionary } from "./BaseModel";
 
 export interface CertificateDto extends BaseDtoDictionary {
-    validationTime: bigint;
+    validationTime: number;
 
     hasGroup: boolean;
 }
 
 export interface CertificateCreateUpdateDto extends BaseDtoDictionary {
-    validationTime: bigint;
+    validationTime: number;
 
     hasGroup: boolean;
 }
