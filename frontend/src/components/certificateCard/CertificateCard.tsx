@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 import { CertificateCardProps } from './interfaces';
-import { Card, Typography, Button } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import dayjs from 'dayjs';
-import { ButtonSection } from './styles';
+import { ButtonSection, StyledCard } from './styles';
 
 const CertificateCard: FC<CertificateCardProps> = ({
     certificate,
     userCertificate,
     userProtocol,
     onCertificateClick,
-    onProtocolClick
+    onProtocolClick,
+    className
 }) => {
     const certificateExpiresDate = React.useMemo(() => {
         if (!userCertificate?.expiresDate) {
@@ -29,7 +30,7 @@ const CertificateCard: FC<CertificateCardProps> = ({
 
     // TODO inline styles
     return (
-        <Card style={{padding: 20, margin: 8}}>
+        <StyledCard className={className}>
             <Typography variant='h5'>
                 {certificate.name}
             </Typography>
@@ -51,7 +52,7 @@ const CertificateCard: FC<CertificateCardProps> = ({
                     )
                 }
             </ButtonSection>
-        </Card>
+        </StyledCard>
     );
 }
 

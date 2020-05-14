@@ -3,13 +3,15 @@ import { UserProtocolDto } from "../../api/models/UserProtocol";
 import { CertificateDto } from "../../api/models/Certificate";
 
 export interface CertificateCardProps {
+    className?: string;
+
     userCertificate?: UserCertificateDto;
 
     userProtocol?: UserProtocolDto;
 
     certificate: CertificateDto;
 
-    onCertificateClick?: () => void
+    onCertificateClick?: () => void;
 
-    onProtocolClick?: () => void
+    onProtocolClick?: () => void;
 }

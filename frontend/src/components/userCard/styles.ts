@@ -6,7 +6,7 @@ export const UserCardContainer = styled(Paper)({ // TODO to column if mobile
     display: 'flex',
     flex: 1,
     justifyContent: 'space-between',
-    padding: '20px'
+    padding: 20
 });
 
 export const UserAvatarContainer = styled('div')({
