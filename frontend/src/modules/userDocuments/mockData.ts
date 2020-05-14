@@ -1,5 +1,5 @@
-import { DocumentsListItem } from "../../components/documentsList/interfaces";
-import { UserCardProps } from "../../components/userCard/interfaces";
+import { DocumentsListItem } from "../../components/organisms/documentsList/interfaces";
+import { UserCardProps } from "../../components/organisms/userCard/interfaces";
 
 export const docsData: DocumentsListItem[] = [
     {
@@ -8,19 +8,6 @@ export const docsData: DocumentsListItem[] = [
         name: 'Certificate 1',
         validationTime: 100500,
         hasGroup: false
-      },
-      userCertificate: {
-        id: 1,
-        number: '123',
-        startDate: new Date(),
-        certificateId: 1,
-        group: 1,
-        expiresDate: new Date(),
-        userId: '0000-0000-0000-0000',
-        file: {
-          id: 1,
-          name: 'my_cert.pdf'
-        }
       },
       userProtocol: {
         id: 1,
@@ -55,18 +42,6 @@ export const docsData: DocumentsListItem[] = [
           name: 'my_cert.pdf'
         }
       },
-      userProtocol: {
-        id: 1,
-        number: '123',
-        startDate: new Date(),
-        certificateId: 1,
-        expiresDate: new Date(),
-        userId: '0000-0000-0000-0000',
-        file: {
-          id: 2,
-          name: 'my_proto.pdf'
-        }
-      }
     },
     {
       certificate: {

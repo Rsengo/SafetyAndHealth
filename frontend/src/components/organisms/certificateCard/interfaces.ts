@@ -1,6 +1,6 @@
-import { UserCertificateDto } from "../../api/models/UserCertificate";
-import { UserProtocolDto } from "../../api/models/UserProtocol";
-import { CertificateDto } from "../../api/models/Certificate";
+import { UserCertificateDto } from "../../../api/models/UserCertificate";
+import { UserProtocolDto } from "../../../api/models/UserProtocol";
+import { CertificateDto } from "../../../api/models/Certificate";
 
 export interface CertificateCardProps {
     className?: string;

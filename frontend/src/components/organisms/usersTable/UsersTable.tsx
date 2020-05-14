@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { isNullOrUndefined } from 'util';
-import Table from '../table/Table';
+import Table from '../../molecules/table/Table';
 import { columns, title, actions } from './UsersTable.props';
 import { UserTableProps } from './interfaces';
 

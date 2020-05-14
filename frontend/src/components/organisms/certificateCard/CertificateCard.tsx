@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import { CertificateCardProps } from './interfaces';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, CardActions, CardContent, Card } from '@material-ui/core';
 import dayjs from 'dayjs';
-import { ButtonSection, StyledCard } from './styles';
 
 const CertificateCard: FC<CertificateCardProps> = ({
     certificate,
@@ -30,18 +29,20 @@ const CertificateCard: FC<CertificateCardProps> = ({
 
     // TODO inline styles
     return (
-        <StyledCard className={className}>
-            <Typography variant='h5'>
-                {certificate.name}
-            </Typography>
-            <Typography variant='subtitle2'>
-                Дата истечения сертификата: {certificateExpiresDate}
-            </Typography>
-            <Typography variant='subtitle2'>
-                Дата истечения протокола: {protocolExpiresDate}
-            </Typography>
-            <ButtonSection>
-                {
+        <Card className={className}>
+            <CardContent>
+                <Typography gutterBottom variant='h5'>
+                    {certificate.name}
+                </Typography>
+                <Typography variant='subtitle2'>
+                    Дата истечения сертификата: {certificateExpiresDate}
+                </Typography>
+                <Typography variant='subtitle2'>
+                    Дата истечения протокола: {protocolExpiresDate}
+                </Typography>
+            </CardContent>
+            <CardActions>
+            {
                     userCertificate && (
                         <Button variant='outlined' onClick={onCertificateClick}>Сертификат</Button>
                     )
@@ -51,8 +52,8 @@ const CertificateCard: FC<CertificateCardProps> = ({
                         <Button variant='outlined' onClick={onProtocolClick}>Протокол</Button>
                     )
                 }
-            </ButtonSection>
-        </StyledCard>
+            </CardActions>
+        </Card>
     );
 }
 

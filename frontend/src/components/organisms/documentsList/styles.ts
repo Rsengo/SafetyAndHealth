@@ -17,7 +17,9 @@ export const DocumentsListContentContainer = styled('div')({
 export const DocumentsListActionsContainer = styled('div')({
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    position: 'sticky',
+    margin: '10px 0' // TODO
 });
 
 export const StyledFab = styled(Fab)({

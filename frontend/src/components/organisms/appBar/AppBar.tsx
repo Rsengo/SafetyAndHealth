@@ -17,11 +17,11 @@ const CustomAppBar: FC<any> = ({
 
     return (
         <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-        [classes.appBarShift]: sideMenuOpened,
-        })}
-    >
+            position="fixed"
+            className={clsx(classes.appBar, {
+                [classes.appBarShift]: sideMenuOpened,
+            })}
+        >
         <Toolbar>
             <IconButton
                 color="inherit"

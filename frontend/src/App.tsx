@@ -1,5 +1,5 @@
 import React from 'react';
-import BasePage from './components/basePage/BasePage';
+import BasePage from './components/templates/basePage/BasePage';
 import Navigation from './modules/navigation/Navigation';
 
 const App: React.FC = () => {
