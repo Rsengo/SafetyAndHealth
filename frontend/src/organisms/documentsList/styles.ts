@@ -1,5 +1,5 @@
 import { styled, Fab } from "@material-ui/core";
-import CertificateCard from "../certificateCard/CertificateCard";
+import DocumentCard from "../documentCard/DocumentCard";
 
 export const DocumentsListContainer = styled('div')({
     display: 'flex',
@@ -26,7 +26,7 @@ export const StyledFab = styled(Fab)({
     margin: '0 8px' // TODO
 });
 
-export const StyledCertificateCard = styled(CertificateCard)({
+export const StyledDocumentCard = styled(DocumentCard)({
     margin: 8,
     height: 'fit-content'
 });

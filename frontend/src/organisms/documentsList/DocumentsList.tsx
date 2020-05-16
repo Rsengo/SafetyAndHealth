@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { DocumentsListProps, DocumentsListItem, DocumentsListAction } from './interfaces';
-import { DocumentsListContainer, DocumentsListContentContainer, DocumentsListActionsContainer, StyledFab, StyledCertificateCard } from './styles';
+import { DocumentsListContainer, DocumentsListContentContainer, DocumentsListActionsContainer, StyledFab, StyledDocumentCard } from './styles';
 import { Tooltip } from '@material-ui/core';
 
 const DocumentsList: FC<DocumentsListProps> = ({
@@ -16,7 +16,7 @@ const DocumentsList: FC<DocumentsListProps> = ({
             <DocumentsListContentContainer>
                 {
                     documents.map(({userCertificate, userProtocol, certificate}: DocumentsListItem) => (
-                        <StyledCertificateCard
+                        <StyledDocumentCard
                             key={certificate.id}
                             certificate={certificate}
                             userProtocol={userProtocol}

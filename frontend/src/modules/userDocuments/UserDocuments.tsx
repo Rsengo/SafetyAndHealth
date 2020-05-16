@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
-import UserCard from '../../components/organisms/userCard/UserCard';
-import DocumentsList from '../../components/organisms/documentsList/DocumentsList';
+import UserCard from '../../organisms/userCard/UserCard';
+import DocumentsList from '../../organisms/documentsList/DocumentsList';
 import { docsData } from './mockData';
-import { UserDocumentsContainer, UserCardContainer, UserDocumentsListContainer } from './styles';
 import { Drawer } from '@material-ui/core';
+import UserDocumentsTemplate from '../../templates/userDocumentsTemplate/UserDocumentsTemplate';
 
 const UserDocuments: FC = () => {
     return (
         <Drawer anchor='right' open onClose={() => {}} variant='temporary'>
-            <UserDocumentsContainer>
-                <UserCardContainer>
+            <UserDocumentsTemplate
+                userCard={(
                     <UserCard
                         firstName="f_name"
                         lastName="l_name"
@@ -20,27 +20,26 @@ const UserDocuments: FC = () => {
                         contactPhoneNumber="+7-999-888-77-66"
                         position="admin"
                     />
-                </UserCardContainer>
-                <UserDocumentsListContainer>
-                    <DocumentsList
-                        documents={docsData}
-                        actions={[
-                        {
-                            icon: (<NoteAddIcon />),
-                            tooltip: 'Добавить документ',
-                            onClick: () => {'Fab clicked'}
-                        },
-                        {
-                            icon: (<GetAppIcon />),
-                            text: 'Скачать все',
-                            onClick: () => {'Fab clicked'}
-                        }
-                        ]}
-                        onCertificateClick={() => {}}
-                        onProtocolClick={() => {}}
-                    />
-                </UserDocumentsListContainer>
-            </UserDocumentsContainer>
+                )}
+            >
+                <DocumentsList
+                    documents={docsData}
+                    actions={[
+                    {
+                        icon: (<NoteAddIcon />),
+                        tooltip: 'Добавить документ',
+                        onClick: () => {'Fab clicked'}
+                    },
+                    {
+                        icon: (<GetAppIcon />),
+                        text: 'Скачать все',
+                        onClick: () => {'Fab clicked'}
+                    }
+                    ]}
+                    onCertificateClick={() => {}}
+                    onProtocolClick={() => {}}
+                />
+            </UserDocumentsTemplate>
         </Drawer>
     );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import SideMenu from '../../organisms/sideMenu/SideMenu';
 import AppBar from '../../organisms/appBar/AppBar';
-import { BasePageProps } from './interfaces';
+import { BaseTemplateProps } from './interfaces';
 import { Container, ContentContainer } from './styled';
 
-const BasePage: React.FC<BasePageProps> = ({
+const BaseTemplate: React.FC<BaseTemplateProps> = ({
     sideMenuOpened,
     onSideMenuOpen,
     onSideMenuClose,
@@ -25,4 +25,4 @@ const BasePage: React.FC<BasePageProps> = ({
   );
 };
 
-export default BasePage;
+export default BaseTemplate;

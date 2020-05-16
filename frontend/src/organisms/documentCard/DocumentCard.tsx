@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { CertificateCardProps } from './interfaces';
+import { DocumentCardProps } from './interfaces';
 import { Typography, Button, CardActions, CardContent, Card } from '@material-ui/core';
 import dayjs from 'dayjs';
 
-const CertificateCard: FC<CertificateCardProps> = ({
+const DocumentCard: FC<DocumentCardProps> = ({
     certificate,
     userCertificate,
     userProtocol,
@@ -57,4 +57,4 @@ const CertificateCard: FC<CertificateCardProps> = ({
     );
 }
 
-export default CertificateCard;
+export default DocumentCard;
