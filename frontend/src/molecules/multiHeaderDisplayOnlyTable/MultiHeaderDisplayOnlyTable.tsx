@@ -12,7 +12,7 @@ const TableRowSection: FC<TableRowData> = ({ columns }) => (
             ))
         }
     </TableRow>
-)
+);
 
 const TableColumnSection: FC<TableColumnData> = ({
     data,
@@ -82,6 +82,6 @@ const MultiHeaderDisplayOnlyTable: FC<MultiHeaderDisplayOnlyTableProps> = ({
             </Table>
         </TableContainer>
     );
-}
+};
 
 export default MultiHeaderDisplayOnlyTable;

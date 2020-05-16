@@ -6,7 +6,7 @@ const _getCellColor = (theme: Theme, type: ColumnType) => {
         case 'danger':
             return theme.palette.error.light;
         case 'header':
-            return undefined; // TODO
+            return theme.palette.primary.light;
         default:
             return undefined;
     }
