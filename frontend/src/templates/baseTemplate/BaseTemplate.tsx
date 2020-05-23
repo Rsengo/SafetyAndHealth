@@ -12,12 +12,12 @@ const BaseTemplate: React.FC<BaseTemplateProps> = ({
 }) => {
   return (
     <Container>
-      <AppBar sideMenuOpened={sideMenuOpened} onSideMenuOpen={onSideMenuOpen} />
       <SideMenu
           open={sideMenuOpened}
           onClose={onSideMenuClose}
           onOpen={onSideMenuOpen}
         />
+      <AppBar sideMenuOpened={sideMenuOpened} onSideMenuOpen={onSideMenuOpen} />
       <ContentContainer>
         {children}
       </ContentContainer>

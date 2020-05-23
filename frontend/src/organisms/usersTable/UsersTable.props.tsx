@@ -1,9 +1,11 @@
 import React from 'react';
+import dayjs from 'dayjs';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import DescriptionIcon from '@material-ui/icons/DescriptionOutlined';
 import {Column, Action} from 'material-table';
 import { UserTableEntity } from './interfaces';
+import FormatConstants from '../../constants/FormatConstants.json';
 
 export const title: string = 'Пользователи системы';
 
@@ -26,6 +28,11 @@ export const columns: Column<UserTableEntity>[] = [
     {
         field: 'position',
         title: 'Должность'
+    },
+    {
+        field: 'birthdayDate',
+        title: 'Дата рождения',
+        render: (data: UserTableEntity) => dayjs(data.birthdayDate).format(FormatConstants.dateFormat)
     },
     {
         field: 'contactPhoneNumber',

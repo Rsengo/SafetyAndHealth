@@ -14,6 +14,8 @@ export interface UserDto {
     lastName: string;
 
     contactPhoneNumber?: string;
+
+    birthdayDate: Date;
 }
 
 export interface UserCreateDto {
@@ -32,6 +34,8 @@ export interface UserCreateDto {
     lastName: string;
 
     contactPhoneNumber?: string;
+
+    birthdayDate: Date;
 }
 
 export interface UserUpdateDto {
@@ -48,4 +52,6 @@ export interface UserUpdateDto {
     lastName: string;
 
     contactPhoneNumber?: string;
+
+    birthdayDate: Date;
 }

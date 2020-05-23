@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
 import { MultiHeaderDisplayOnlyTableProps, TableRowData, TableColumnData} from './interfaces';
-import { TableContainer, Paper, TableHead, Table, TableBody, TableRow, TableFooter, TablePagination } from '@material-ui/core';
+import { TableContainer, Paper, TableHead, Table, TableBody, TableFooter, TablePagination } from '@material-ui/core';
 import TablePaginationActions from '@material-ui/core/TablePagination/TablePaginationActions';
-import { StyledTableCell } from './styles';
+import { StyledTableCell, StyledTableRow } from './styles';
 
 const TableRowSection: FC<TableRowData> = ({ columns }) => (
-    <TableRow>
+    <StyledTableRow>
         {
             columns?.map((column: TableColumnData) => (
                 <TableColumnSection {...column} />
             ))
         }
-    </TableRow>
+    </StyledTableRow>
 );
 
 const TableColumnSection: FC<TableColumnData> = ({
@@ -66,18 +66,16 @@ const MultiHeaderDisplayOnlyTable: FC<MultiHeaderDisplayOnlyTableProps> = ({
                     }
                 </TableBody>
                 <TableFooter>
-                <TableRow>
                     <TablePagination
-                    rowsPerPageOptions={[10, 25, 50, { label: 'Все', value: -1 }]}
-                    colSpan={3}
-                    count={totalCount}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onChangePage={changePageHandler}
-                    onChangeRowsPerPage={changeRowsPerPageHandler}
-                    ActionsComponent={TablePaginationActions}
-                    />
-                </TableRow>
+                        rowsPerPageOptions={[10, 25, 50, { label: 'Все', value: -1 }]}
+                        colSpan={3}
+                        count={totalCount}
+                        rowsPerPage={rowsPerPage}
+                        page={page}
+                        onChangePage={changePageHandler}
+                        onChangeRowsPerPage={changeRowsPerPageHandler}
+                        ActionsComponent={TablePaginationActions}
+                        />
                 </TableFooter>
             </Table>
         </TableContainer>

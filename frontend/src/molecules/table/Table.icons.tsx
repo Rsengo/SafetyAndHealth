@@ -19,9 +19,9 @@ import { Icons } from 'material-table';
 
 const icons : Icons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
-    Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
-    Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-    Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
+    Check: forwardRef((props, ref) => <Check {...props} style={{color: 'green'}}  ref={ref} />), // TODO inline
+    Clear: forwardRef((props, ref) => <Clear {...props} color='error' ref={ref} />),
+    Delete: forwardRef((props, ref) => <DeleteOutline {...props} color='error' ref={ref} />),
     DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
     Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
     Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
@@ -33,7 +33,7 @@ const icons : Icons = {
     ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
     Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
     SortArrow: forwardRef((props, ref) => <ArrowUpward {...props} ref={ref} />),
-    ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
+    ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} style={{width: 'auto'}} ref={ref} />), // TODO inline
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
   };
 

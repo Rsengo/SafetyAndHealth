@@ -13,6 +13,7 @@ const UserCard: FC<UserCardProps> = ({
     avatar
 }) => {
     // TODO remove inline styles
+    // TODO birthdayDate?
     return (
         <UserCardContainer>
             <UserAvatarContainer>

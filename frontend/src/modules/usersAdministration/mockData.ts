@@ -7,7 +7,8 @@ export const mockUser: UserTableEntity = {
     firstName: 'f_name',
     lastName: 'l_name',
     position: 'admin',
-    contactPhoneNumber: '+7(999)999-55-66'
+    contactPhoneNumber: '+7(999)999-55-66',
+    birthdayDate: new Date()
 };
 
 export const mockUserList: UserTableEntity[] = [

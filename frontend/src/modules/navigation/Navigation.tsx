@@ -7,6 +7,8 @@ import {
 import UsersAdministration from '../usersAdministration/UsersAdministration';
 import UserDocuments from '../userDocuments/UserDocuments';
 import CertificatesTable from '../certificatesTable/CertificatesTable';
+import DictionariesAdministration from '../dictionariesAdministration/DictionariesAdministration';
+import UserRegistration from '../userRegistration/UserRegistration';
 
 const Navigation: FC = () => {
     return (
@@ -20,6 +22,12 @@ const Navigation: FC = () => {
                 </Route>
                 <Route path='/certificatesTable'>
                     <CertificatesTable />
+                </Route>
+                <Route path='/dictionaries'>
+                    <DictionariesAdministration />
+                </Route>
+                <Route path='/userRegistration'>
+                    <UserRegistration />
                 </Route>
                 <Route exect path='/'>
                     <div>start page</div>

@@ -14,11 +14,16 @@ export interface UserTableEntity {
     lastName: string;
 
     contactPhoneNumber?: string;
+
+    birthdayDate: Date;
 }
 
 export interface UserTableProps {
     data: UserTableEntity[],
-    searchable: boolean,
-    onSearchChange?: (value: string) => void, //TODO depends on search
-    searchValue?: string //TODO depends on search
+
+    isLoading?: boolean;
+
+    onSearchChange: (value: string) => void;
+
+    searchValue: string;
 }
