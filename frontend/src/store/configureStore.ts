@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, Reducer, combineReducers } from 'redux'
+import { createStore, applyMiddleware, Reducer } from 'redux'
 import createSagaMiddleware, { SagaMiddleware, Saga } from 'redux-saga'
 import { ReduxAction, ReduxStore, ReduxState, SagaExtraParams } from './interfaces';
 import createRootReducer from './createRootReducer';
@@ -13,7 +13,7 @@ const configureStore = (sagaExtra: SagaExtraParams): ReduxStore => {
         applyMiddleware(sagaMiddleware)
     );
 
-    sagaMiddleware.run<Saga>(rootSaga, sagaExtra);
+    sagaMiddleware.run(rootSaga, sagaExtra);
 
     return store;
 };
