@@ -1,6 +1,6 @@
 import React from 'react';
-import SideMenu from '../../organisms/sideMenu/SideMenu';
-import AppBar from '../../organisms/appBar/AppBar';
+import SideMenu from '../../organisms/shared/sideMenu/SideMenu';
+import AppBar from '../../organisms/shared/appBar/AppBar';
 import { BaseTemplateProps } from './interfaces';
 import { Container, ContentContainer } from './styled';
 

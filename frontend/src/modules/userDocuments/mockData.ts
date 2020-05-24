@@ -1,5 +1,5 @@
-import { DocumentsListItem } from "../../organisms/documentsList/interfaces";
-import { UserCardProps } from "../../organisms/userCard/interfaces";
+import { DocumentsListItem } from "../../organisms/shared/documentsList/interfaces";
+import { UserCardProps } from "../../organisms/shared/userCard/interfaces";
 
 export const docsData: DocumentsListItem[] = [
     {

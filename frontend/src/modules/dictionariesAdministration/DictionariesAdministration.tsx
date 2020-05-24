@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import DictionariesList from '../../organisms/dictionariesList/DictionariesList';
+import DictionariesList from '../../organisms/admin/dictionariesList/DictionariesList';
 import DictionariesAdministrationTemplate from '../../templates/dictionariesAdministrationTemplate/DictionariesAdministrationTemplate';
 import { Switch, Route, useRouteMatch, useHistory, Redirect } from 'react-router';
 import CertificatesDictionaryTableModule from '../certificatesDictionaryTable/CertificatesDictionaryTableModule';
 import PositionsDictionaryTableModule from '../positionsDictionaryTable/PositionsDictionaryTableModule';
-import { DictionaryType } from '../../organisms/dictionariesList/dictionaryType';
+import { DictionaryType } from '../../organisms/admin/dictionariesList/dictionaryType';
 
 const DictionariesAdministration: FC = () => {
     const [type, setType] = React.useState<DictionaryType>('positions');

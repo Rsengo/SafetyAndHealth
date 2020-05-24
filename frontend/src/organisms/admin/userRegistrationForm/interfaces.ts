@@ -1,5 +1,5 @@
-import { FieldData, FieldValidator, FieldComparatorValidator } from '../../types/form';
-import { PositionDto } from '../../api/models/Position';
+import { FieldData, FieldValidator, FieldComparatorValidator } from '../../../types/form';
+import { PositionDto } from '../../../api/models/Position';
 
 export interface UserRegistrationInfo {
     [index: string]: FieldData<string | null> | FieldData<number | null>;

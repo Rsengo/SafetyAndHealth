@@ -3,7 +3,7 @@ import { UserRegistrationFormProps } from './interfaces';
 import { UserInfoFormContainer } from './styles';
 import { TextField } from '@material-ui/core';
 import { Autocomplete, RenderInputParams } from '@material-ui/lab';
-import { PositionDto } from '../../api/models/Position';
+import { PositionDto } from '../../../api/models/Position';
 
 const UserRegistrationForm: FC<UserRegistrationFormProps> = ({
     userInfo,

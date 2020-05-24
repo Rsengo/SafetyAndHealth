@@ -5,5 +5,19 @@
     },
     "navigation": {
         "sideMenuOpen": false
+    },
+    "positions": {
+        "positions": [],
+        "loading": false
+    },
+    "certificates": {
+        "certificates": [],
+        "loading": false
+    },
+    "userDocuments": {
+        "userCertificates": [],
+        "userProtocols": [],
+        "userCertificatesLoading": false,
+        "userProtocolsLoading": false
     }
 }

@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { PositionsDictionaryTableProps, PositionsDictionaryTableEntity } from './interfaces';
-import Table from '../../molecules/table/Table';
-import { title, columns } from './PositionsDictionaryTable.props';
+import { CertificatesDictionaryTableProps, CertificatesDictionaryTableEntity } from './interfaces';
+import Table from '../../../molecules/table/Table';
+import { title, columns } from './CertificatesDictionaryTable.props';
 
-const PositionsDictionaryTable: FC<PositionsDictionaryTableProps> = ({
+const CertificatesDictionaryTable: FC<CertificatesDictionaryTableProps> = ({
     data,
     searchValue,
     isLoading,
@@ -26,15 +26,15 @@ const PositionsDictionaryTable: FC<PositionsDictionaryTableProps> = ({
         searchValue={searchValue}
         onSearchChange={onSearchChange}
         editable={{
-            onRowAdd: (data: PositionsDictionaryTableEntity) => {
+            onRowAdd: (data: CertificatesDictionaryTableEntity) => {
                 onRowAdd(data);
                 return new Promise((resolve) => resolve());
             },
-            onRowUpdate: (data: PositionsDictionaryTableEntity) => {
+            onRowUpdate: (data: CertificatesDictionaryTableEntity) => {
                 onRowUpdate(data);
                 return new Promise((resolve) => resolve());
             },
-            onRowDelete: (data: PositionsDictionaryTableEntity) => {
+            onRowDelete: (data: CertificatesDictionaryTableEntity) => {
                 onRowDelete(data);
                 return new Promise((resolve) => resolve());
             }
@@ -42,4 +42,4 @@ const PositionsDictionaryTable: FC<PositionsDictionaryTableProps> = ({
     />
 );
 
-export default PositionsDictionaryTable;
+export default CertificatesDictionaryTable;

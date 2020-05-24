@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
-import UserCard from '../../organisms/userCard/UserCard';
-import DocumentsList from '../../organisms/documentsList/DocumentsList';
+import UserCard from '../../organisms/shared/userCard/UserCard';
+import DocumentsList from '../../organisms/shared/documentsList/DocumentsList';
 import { docsData } from './mockData';
 import { Drawer } from '@material-ui/core';
 import UserDocumentsTemplate from '../../templates/userDocumentsTemplate/UserDocumentsTemplate';

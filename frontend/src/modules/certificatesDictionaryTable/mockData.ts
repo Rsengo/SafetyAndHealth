@@ -1,4 +1,4 @@
-import { CertificatesDictionaryTableEntity } from '../../organisms/certificatesDictionaryTable/interfaces';
+import { CertificatesDictionaryTableEntity } from '../../organisms/admin/certificatesDictionaryTable/interfaces';
 
 export const mockCertificatesList: CertificatesDictionaryTableEntity[] = [
     {

@@ -1,4 +1,4 @@
-import { PositionsDictionaryTableEntity } from '../../organisms/positionsDictionaryTable/interfaces';
+import { PositionsDictionaryTableEntity } from '../../organisms/admin/positionsDictionaryTable/interfaces';
 
 export const mockPositionsList: PositionsDictionaryTableEntity[] = [
     {

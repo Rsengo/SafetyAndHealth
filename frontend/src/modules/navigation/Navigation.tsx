@@ -3,6 +3,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
+    Redirect,
   } from 'react-router-dom';
 import UsersAdministration from '../usersAdministration/UsersAdministration';
 import UserDocuments from '../userDocuments/UserDocuments';
@@ -29,8 +30,8 @@ const Navigation: FC = () => {
                 <Route path='/userRegistration'>
                     <UserRegistration />
                 </Route>
-                <Route exect path='/'>
-                    <div>start page</div>
+                <Route exact path='/'>
+                    <Redirect to='/users' />
                 </Route>
             </Switch>
         </Router>

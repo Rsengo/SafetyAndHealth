@@ -1,23 +1,11 @@
 import { createStore, applyMiddleware, Reducer, combineReducers } from 'redux'
 import createSagaMiddleware, { SagaMiddleware, Saga } from 'redux-saga'
-import { all } from 'redux-saga/effects';
 import { ReduxAction, ReduxStore, ReduxState, SagaExtraParams } from './interfaces';
-import usersReducer from './users/reducer';
-import navigationReducer from './navigation/reducer';
-import usersSaga from './users/sagas';
-
-// TODO all sagas typing
-function* rootSaga(extra: SagaExtraParams) {
-    yield all([
-        usersSaga(extra)
-    ]);
-}
+import createRootReducer from './createRootReducer';
+import rootSaga from './rootSaga';
 
 const configureStore = (sagaExtra: SagaExtraParams): ReduxStore => {
-    const rootReducer: Reducer<ReduxState, ReduxAction> = combineReducers({
-        users: usersReducer,
-        navigation: navigationReducer
-    });
+    const rootReducer: Reducer<ReduxState, ReduxAction> = createRootReducer();
     const sagaMiddleware: SagaMiddleware = createSagaMiddleware(); //TODO generic type
 
     const store: ReduxStore = createStore(

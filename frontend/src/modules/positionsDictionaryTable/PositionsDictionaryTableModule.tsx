@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import PositionsDictionaryTable from '../../organisms/positionsDictionaryTable/PositionsDictionaryTable';
+import PositionsDictionaryTable from '../../organisms/admin/positionsDictionaryTable/PositionsDictionaryTable';
 import { mockPositionsList } from './mockData';
 
 const PositionsDictionaryTableModule: FC = () => (

@@ -1,4 +1,4 @@
-import { ArrayElementType } from "../../types/array";
+import { ArrayElementType } from "../../../types/array";
 
 export const DictionaryTypes = [
     'positions',

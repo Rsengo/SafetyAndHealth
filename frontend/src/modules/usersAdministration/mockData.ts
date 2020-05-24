@@ -1,4 +1,4 @@
-import { UserTableEntity } from "../../organisms/usersTable/interfaces";
+import { UserTableEntity } from "../../organisms/admin/usersTable/interfaces";
 
 export const mockUser: UserTableEntity = {
     id: '1',

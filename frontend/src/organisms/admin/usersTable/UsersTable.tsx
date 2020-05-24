@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Table from '../../molecules/table/Table';
+import Table from '../../../molecules/table/Table';
 import { columns, title, actions } from './UsersTable.props';
 import { UserTableProps } from './interfaces';
 

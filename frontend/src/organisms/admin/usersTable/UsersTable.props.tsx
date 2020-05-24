@@ -5,7 +5,7 @@ import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import DescriptionIcon from '@material-ui/icons/DescriptionOutlined';
 import {Column, Action} from 'material-table';
 import { UserTableEntity } from './interfaces';
-import FormatConstants from '../../constants/FormatConstants.json';
+import FormatConstants from '../../../constants/FormatConstants.json';
 
 export const title: string = 'Пользователи системы';
 
