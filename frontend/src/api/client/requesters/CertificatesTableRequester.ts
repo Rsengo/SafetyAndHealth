@@ -1,6 +1,6 @@
 import BaseRequester from './BaseRequester';
 import ApiConstants from '../../../constants/ApiConstants.json';
-import CertificatesTableDto from '../../models/CertificatesTable';
+import { CertificatesTableDto } from '../../models/CertificatesTable';
 
 // TODO optimize headers request
 class CertificatesTableRequester extends BaseRequester {

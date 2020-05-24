@@ -6,9 +6,12 @@ import UserCertificateRequester from './requesters/UserCertificateRequester';
 import UserProtocolRequester from './requesters/UserProtocolRequester';
 import UserRequester from './requesters/UserRequester';
 import ApiClientConfig from './ApiClientConfig';
+import CertificatesTableRequester from './requesters/CertificatesTableRequester';
 
 class ApiClient {
     public readonly certificate: CertificateRequester;
+
+    public readonly certificatesTable: CertificatesTableRequester;
 
     public readonly documentTemplate: DocumentTemplateRequester;
 
@@ -26,6 +29,7 @@ class ApiClient {
         };
 
         this.certificate = new CertificateRequester(requestConfig);
+        this.certificatesTable = new CertificatesTableRequester(requestConfig);
         this.documentTemplate = new DocumentTemplateRequester(requestConfig);
         this.position = new PositionRequester(requestConfig);
         this.userCertificate = new UserCertificateRequester(requestConfig);

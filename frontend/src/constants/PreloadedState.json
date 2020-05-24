@@ -14,10 +14,16 @@
         "certificates": [],
         "loading": false
     },
-    "userDocuments": {
+    "userCertificates": {
         "userCertificates": [],
+        "loading": false
+    },
+    "userProtocols": {
         "userProtocols": [],
-        "userCertificatesLoading": false,
-        "userProtocolsLoading": false
+        "loading": false
+    },
+    "certificatesTable": {
+        "table": null,
+        "loading": null
     }
 }

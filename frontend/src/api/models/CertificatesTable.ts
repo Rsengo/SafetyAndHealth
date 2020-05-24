@@ -1,6 +1,6 @@
 import { TableRowDto } from './TableModel';
 
-export default interface CertificatesTableDto {
+export interface CertificatesTableDto {
     headers: TableRowDto[];
 
     data: TableRowDto[];
