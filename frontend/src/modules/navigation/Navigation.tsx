@@ -3,43 +3,26 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Redirect,
   } from 'react-router-dom';
-import UsersAdministration from '../usersAdministration/UsersAdministration';
-import UserDocuments from '../userDocuments/UserDocuments';
-import CertificatesTable from '../certificatesTable/CertificatesTable';
-import DictionariesAdministration from '../dictionariesAdministration/DictionariesAdministration';
-import UserRegistration from '../userRegistration/UserRegistration';
-import BriefingsLibrary from '../briefingsLibrary/BriefingsLibrary';
+import { rootRoutes } from '../../routes';
+import { RouteDescription } from '../../types/route';
 
 const Navigation: FC = () => {
     return (
         <Router>
             <Switch>
-                <Route path='/users'>
-                    <UsersAdministration />
-                </Route>
-                <Route path='/userDocuments'>
-                    <UserDocuments />
-                </Route>
-                <Route path='/certificatesTable'>
-                    <CertificatesTable />
-                </Route>
-                <Route path='/dictionaries'>
-                    <DictionariesAdministration />
-                </Route>
-                <Route path='/userRegistration'>
-                    <UserRegistration />
-                </Route>
-                <Route path='/briefingsLibrary'>
-                    <BriefingsLibrary />
-                </Route>
-                <Route exact path='/'>
-                    <Redirect to='/users' />
-                </Route>
+                {
+                    rootRoutes.map((routeDescription: RouteDescription) => (
+                        <Route 
+                            exact={routeDescription.exact} 
+                            path={routeDescription.path} 
+                            component={routeDescription.component} 
+                        />
+                    ))
+                }
             </Switch>
         </Router>
     );
-}
+};
 
 export default Navigation;

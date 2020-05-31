@@ -1,17 +1,14 @@
 import React, { FC } from 'react';
 import DictionariesList from '../../organisms/admin/dictionariesList/DictionariesList';
 import DictionariesAdministrationTemplate from '../../templates/dictionariesAdministrationTemplate/DictionariesAdministrationTemplate';
-import { Switch, Route, useRouteMatch, useHistory, Redirect } from 'react-router';
-import CertificatesDictionaryTableModule from '../certificatesDictionaryTable/CertificatesDictionaryTableModule';
-import PositionsDictionaryTableModule from '../positionsDictionaryTable/PositionsDictionaryTableModule';
+import { Switch, Route, useHistory } from 'react-router';
 import { DictionaryType } from '../../organisms/admin/dictionariesList/dictionaryType';
 import Dictionaries from '../../constants/Dictionaries.json'; // TODO norm localization
-import BriefingTypesDictionaryTable from '../briefingTypesDictionaryTable/BriefingTypesDictionaryTableModule';
+import { getDictionaryRoutes } from '../../routes';
+import { RouteDescription } from '../../types/route';
 
 const DictionariesAdministration: FC = () => {
     const [type, setType] = React.useState<DictionaryType>('positions');
-
-    const match = useRouteMatch();
     const history = useHistory();
 
     const onItemClick = React.useCallback((route: DictionaryType) => {
@@ -30,12 +27,11 @@ const DictionariesAdministration: FC = () => {
             )}
         >
             <Switch>
-                <Route exact path={'/dictionaries'}>
-                    <Redirect to={`/dictionaries/${type}`} />
-                </Route>
-                <Route path={`${match.path}/positions`} component={PositionsDictionaryTableModule} />
-                <Route path={`${match.path}/certificates`} component={CertificatesDictionaryTableModule} />
-                <Route path={`${match.path}/briefingTypes`} component={BriefingTypesDictionaryTable} />
+                {
+                    getDictionaryRoutes(type).map(({path, component, exact}: RouteDescription) => (
+                        <Route path={path} component={component} exact={exact} />
+                    ))
+                }
             </Switch>
         </DictionariesAdministrationTemplate>
     );
