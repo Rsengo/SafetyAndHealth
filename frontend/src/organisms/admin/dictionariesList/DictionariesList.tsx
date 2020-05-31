@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { DictionariesListProps } from './interfaces';
 import { DictionaryTypes } from './dictionaryType';
 import { List, ListItem, ListItemText } from '@material-ui/core';
-import Dictionaries from '../../../constants/Dictionaries.json'; // TODO norm localization
 
 const DictionariesList: FC<DictionariesListProps> = ({
     selectedType,
+    dictionaries,
     onItemClick
 }) => {
     const selectedIndex = React.useMemo(() => {
@@ -22,7 +22,7 @@ const DictionariesList: FC<DictionariesListProps> = ({
                         selected={idx === selectedIndex}
                         onClick={() => onItemClick(type)}
                     >
-                        <ListItemText primary={Dictionaries[type]} />
+                        <ListItemText primary={dictionaries[type]} />
                     </ListItem>
                 ))
             }

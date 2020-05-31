@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import { PositionsDictionaryTableProps, PositionsDictionaryTableEntity } from './interfaces';
+import { PositionsDictionaryTableProps } from './interfaces';
 import Table from '../../../molecules/table/Table';
 import { title, columns } from './PositionsDictionaryTable.props';
+import { PositionDto } from '../../../api/models/Position';
 
 const PositionsDictionaryTable: FC<PositionsDictionaryTableProps> = ({
     data,
@@ -26,15 +27,15 @@ const PositionsDictionaryTable: FC<PositionsDictionaryTableProps> = ({
         searchValue={searchValue}
         onSearchChange={onSearchChange}
         editable={{
-            onRowAdd: (data: PositionsDictionaryTableEntity) => {
+            onRowAdd: (data: PositionDto) => {
                 onRowAdd(data);
                 return new Promise((resolve) => resolve());
             },
-            onRowUpdate: (data: PositionsDictionaryTableEntity) => {
+            onRowUpdate: (data: PositionDto) => {
                 onRowUpdate(data);
                 return new Promise((resolve) => resolve());
             },
-            onRowDelete: (data: PositionsDictionaryTableEntity) => {
+            onRowDelete: (data: PositionDto) => {
                 onRowDelete(data);
                 return new Promise((resolve) => resolve());
             }

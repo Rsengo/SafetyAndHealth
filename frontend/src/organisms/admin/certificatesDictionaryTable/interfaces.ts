@@ -1,15 +1,7 @@
-export interface CertificatesDictionaryTableEntity {
-    id: number;
-
-    name: string;
-
-    validationTime: number;
-
-    hasGroup: boolean;
-}
+import { CertificateDto } from '../../../api/models/Certificate';
 
 export interface CertificatesDictionaryTableProps {
-    data: CertificatesDictionaryTableEntity[];
+    data: CertificateDto[];
 
     isLoading?: boolean;
 
@@ -17,9 +9,9 @@ export interface CertificatesDictionaryTableProps {
 
     searchValue: string;
 
-    onRowAdd: (entity: CertificatesDictionaryTableEntity) => void;
+    onRowAdd: (entity: CertificateDto) => void;
 
-    onRowUpdate: (entity: CertificatesDictionaryTableEntity) => void;
+    onRowUpdate: (entity: CertificateDto) => void;
 
-    onRowDelete: (entity: CertificatesDictionaryTableEntity) => void;
+    onRowDelete: (entity: CertificateDto) => void;
 }

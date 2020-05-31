@@ -1,6 +1,6 @@
-import { CertificatesDictionaryTableEntity } from '../../organisms/admin/certificatesDictionaryTable/interfaces';
+import { CertificateDto } from '../../api/models/Certificate';
 
-export const mockCertificatesList: CertificatesDictionaryTableEntity[] = [
+export const mockCertificatesList: CertificateDto[] = [
     {
         id: 1,
         name: 'certificate 1',

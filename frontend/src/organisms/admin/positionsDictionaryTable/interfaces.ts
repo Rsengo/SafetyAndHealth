@@ -1,11 +1,7 @@
-export interface PositionsDictionaryTableEntity {
-    id: number;
-
-    name: string;
-}
+import { PositionDto } from '../../../api/models/Position';
 
 export interface PositionsDictionaryTableProps {
-    data: PositionsDictionaryTableEntity[];
+    data: PositionDto[];
 
     isLoading?: boolean;
 
@@ -13,9 +9,9 @@ export interface PositionsDictionaryTableProps {
 
     searchValue: string;
 
-    onRowAdd: (entity: PositionsDictionaryTableEntity) => void;
+    onRowAdd: (entity: PositionDto) => void;
 
-    onRowUpdate: (entity: PositionsDictionaryTableEntity) => void;
+    onRowUpdate: (entity: PositionDto) => void;
 
-    onRowDelete: (entity: PositionsDictionaryTableEntity) => void;
+    onRowDelete: (entity: PositionDto) => void;
 }

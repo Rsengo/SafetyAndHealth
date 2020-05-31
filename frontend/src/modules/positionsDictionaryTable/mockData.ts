@@ -1,6 +1,6 @@
-import { PositionsDictionaryTableEntity } from '../../organisms/admin/positionsDictionaryTable/interfaces';
+import { PositionDto } from '../../api/models/Position';
 
-export const mockPositionsList: PositionsDictionaryTableEntity[] = [
+export const mockPositionsList: PositionDto[] = [
     {
         id: 1,
         name: 'position 1'

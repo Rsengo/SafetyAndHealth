@@ -1,7 +1,8 @@
 import { Column } from 'material-table';
 import { CertificatesDictionaryTableProps } from './interfaces';
+import Dictionaries from '../../../constants/Dictionaries.json';
 
-export const title: string = 'Сертификаты';
+export const title: string = Dictionaries.certificates;
 
 export const columns: Column<CertificatesDictionaryTableProps>[] = [
     {

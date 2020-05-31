@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Card, CardContent, Typography, FormControlLabel, Checkbox, Divider } from '@material-ui/core';
+import { Card, CardContent, Typography, FormControlLabel, Checkbox } from '@material-ui/core';
 import { BriefingCardProps } from './interfaces';
 import { getInitials } from '../../../utils/userUtils';
 import { toUiDate } from '../../../utils/dateUtils';

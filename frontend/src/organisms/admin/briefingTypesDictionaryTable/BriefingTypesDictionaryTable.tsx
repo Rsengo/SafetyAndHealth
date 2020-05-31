@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { CertificatesDictionaryTableProps } from './interfaces';
+import { BriefingTypesDictionaryTableProps } from './interfaces';
 import Table from '../../../molecules/table/Table';
-import { title, columns } from './CertificatesDictionaryTable.props';
-import { CertificateDto } from '../../../api/models/Certificate';
+import { title, columns } from './BriefingTypesDictionaryTable.props';
+import { BriefingTypeDto } from '../../../api/models/BriefingType';
 
-const CertificatesDictionaryTable: FC<CertificatesDictionaryTableProps> = ({
+const BriefingTypesDictionaryTable: FC<BriefingTypesDictionaryTableProps> = ({
     data,
     searchValue,
     isLoading,
@@ -27,15 +27,15 @@ const CertificatesDictionaryTable: FC<CertificatesDictionaryTableProps> = ({
         searchValue={searchValue}
         onSearchChange={onSearchChange}
         editable={{
-            onRowAdd: (data: CertificateDto) => {
+            onRowAdd: (data: BriefingTypeDto) => {
                 onRowAdd(data);
                 return new Promise((resolve) => resolve());
             },
-            onRowUpdate: (data: CertificateDto) => {
+            onRowUpdate: (data: BriefingTypeDto) => {
                 onRowUpdate(data);
                 return new Promise((resolve) => resolve());
             },
-            onRowDelete: (data: CertificateDto) => {
+            onRowDelete: (data: BriefingTypeDto) => {
                 onRowDelete(data);
                 return new Promise((resolve) => resolve());
             }
@@ -43,4 +43,4 @@ const CertificatesDictionaryTable: FC<CertificatesDictionaryTableProps> = ({
     />
 );
 
-export default CertificatesDictionaryTable;
+export default BriefingTypesDictionaryTable;

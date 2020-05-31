@@ -2,7 +2,8 @@ import { ArrayElementType } from "../../../types/array";
 
 export const DictionaryTypes = [
     'positions',
-    'certificates'
+    'certificates',
+    'briefingTypes'
 ] as const;
 
 export type DictionaryType = ArrayElementType<typeof DictionaryTypes>;

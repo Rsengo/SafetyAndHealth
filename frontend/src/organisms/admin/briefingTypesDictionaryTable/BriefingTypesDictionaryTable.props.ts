@@ -1,10 +1,10 @@
 import { Column } from 'material-table';
+import { BriefingTypeDto } from '../../../api/models/BriefingType';
 import Dictionaries from '../../../constants/Dictionaries.json';
-import { PositionDto } from '../../../api/models/Position';
 
-export const title: string = Dictionaries.positions;
+export const title: string = Dictionaries.briefingTypes;
 
-export const columns: Column<PositionDto>[] = [
+export const columns: Column<BriefingTypeDto>[] = [
     {
         field: 'id',
         hidden: true,

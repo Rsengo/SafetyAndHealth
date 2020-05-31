@@ -5,6 +5,8 @@ import { Switch, Route, useRouteMatch, useHistory, Redirect } from 'react-router
 import CertificatesDictionaryTableModule from '../certificatesDictionaryTable/CertificatesDictionaryTableModule';
 import PositionsDictionaryTableModule from '../positionsDictionaryTable/PositionsDictionaryTableModule';
 import { DictionaryType } from '../../organisms/admin/dictionariesList/dictionaryType';
+import Dictionaries from '../../constants/Dictionaries.json'; // TODO norm localization
+import BriefingTypesDictionaryTable from '../briefingTypesDictionaryTable/BriefingTypesDictionaryTableModule';
 
 const DictionariesAdministration: FC = () => {
     const [type, setType] = React.useState<DictionaryType>('positions');
@@ -22,6 +24,7 @@ const DictionariesAdministration: FC = () => {
             dictionariesList={(
                 <DictionariesList 
                     selectedType={type}
+                    dictionaries={Dictionaries}
                     onItemClick={onItemClick}
                 />
             )}
@@ -32,6 +35,7 @@ const DictionariesAdministration: FC = () => {
                 </Route>
                 <Route path={`${match.path}/positions`} component={PositionsDictionaryTableModule} />
                 <Route path={`${match.path}/certificates`} component={CertificatesDictionaryTableModule} />
+                <Route path={`${match.path}/briefingTypes`} component={BriefingTypesDictionaryTable} />
             </Switch>
         </DictionariesAdministrationTemplate>
     );
