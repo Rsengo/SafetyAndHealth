@@ -1,4 +1,7 @@
+import { PositionDto } from '../../api/models/Position';
+
 export default interface PositionsState {
-    positions: [],
-    loading: boolean
+    positions: PositionDto[];
+
+    loading: boolean;
 }

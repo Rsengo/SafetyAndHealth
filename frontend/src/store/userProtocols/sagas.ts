@@ -17,9 +17,9 @@ function* loadUserProtocolsWorker(api: ApiClient) {
 
 function* createUserProtocolWorker(api: ApiClient, action: types.CreateUserProtocolsAction) {
     try {
-        call(() => api.userProtocol.create(action.payload));
+        yield call(() => api.userProtocol.create(action.payload));
         // put(actions.registerUserSuccess()) // TODO: toast
-        put(actions.loadUserProtocols());
+        yield put(actions.loadUserProtocols());
     } catch (error) {
         // put(actions.registerUserError()) // TODO: toast
     }

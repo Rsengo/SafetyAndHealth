@@ -40,8 +40,9 @@ namespace SafetyAndHealth.Controllers
             var certificate = _mapper.Map<Certificate>(dto);
             _context.Certificates.Add(certificate);
             await _context.SaveChangesAsync();
+            var response = _mapper.Map<CertificateDto>(certificate);
 
-            return Ok();
+            return Ok(response);
         }
 
         [HttpPut]
@@ -50,8 +51,9 @@ namespace SafetyAndHealth.Controllers
             var certificate = _mapper.Map<Certificate>(dto);
             _context.Certificates.Update(certificate);
             await _context.SaveChangesAsync();
+            var response = _mapper.Map<CertificateDto>(certificate);
 
-            return Ok();
+            return Ok(response);
         }
 
         [HttpDelete("{id}")]

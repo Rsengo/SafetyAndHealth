@@ -17,9 +17,9 @@ function* loadPositionsWorker(api: ApiClient) {
 
 function* createPositionWorker(api: ApiClient, action: types.CreatePositionsAction) {
     try {
-        call(() => api.position.create(action.payload));
+        yield call(() => api.position.create(action.payload));
         // put(actions.registerUserSuccess()) // TODO: toast
-        put(actions.loadPositions());
+        yield put(actions.loadPositions());
     } catch (error) {
         // put(actions.registerUserError()) // TODO: toast
     }
@@ -27,9 +27,9 @@ function* createPositionWorker(api: ApiClient, action: types.CreatePositionsActi
 
 function* updatePositionWorker(api: ApiClient, action: types.UpdatePositionsAction) {
     try {
-        call(() => api.position.update(action.payload));
+        yield call(() => api.position.update(action.payload));
         // put(actions.registerUserSuccess()) // TODO: toast
-        put(actions.loadPositions());
+        yield put(actions.loadPositions());
     } catch (error) {
         // put(actions.registerUserError()) // TODO: toast
     }
@@ -37,9 +37,9 @@ function* updatePositionWorker(api: ApiClient, action: types.UpdatePositionsActi
 
 function* deletePositionWorker(api: ApiClient, action: types.DeletePositionsAction) {
     try {
-        call(() => api.position.delete(action.payload));
+        yield call(() => api.position.delete(action.payload));
         // put(actions.registerUserSuccess()) // TODO: toast
-        put(actions.loadPositions());
+        yield put(actions.loadPositions());
     } catch (error) {
         // put(actions.registerUserError()) // TODO: toast
     }

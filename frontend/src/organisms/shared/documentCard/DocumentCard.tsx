@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import { DocumentCardProps } from './interfaces';
 import { Typography, Button, CardActions, CardContent, Card } from '@material-ui/core';
-import dayjs from 'dayjs';
+import { toUiDate } from '../../../utils/dateUtils';
+import DescriptionTextBlock from '../../../molecules/descriptionTextBlock/DescriptionTextBlock';
 
 const DocumentCard: FC<DocumentCardProps> = ({
     certificate,
@@ -16,7 +17,7 @@ const DocumentCard: FC<DocumentCardProps> = ({
             return 'отсутствует';
         }
 
-        return dayjs(userCertificate.expiresDate).format('DD.MM.YYYY');
+        return toUiDate(userCertificate?.expiresDate);
     }, [userCertificate]); // TODO проверить это условие (deps)
 
     const protocolExpiresDate = React.useMemo(() => {
@@ -24,22 +25,16 @@ const DocumentCard: FC<DocumentCardProps> = ({
             return 'отсутствует';
         }
 
-        return dayjs(userProtocol?.expiresDate).format('DD.MM.YYYY');
+        return toUiDate(userProtocol?.expiresDate);
     }, [userProtocol]); // TODO проверить это условие (deps)
 
     // TODO inline styles
     return (
         <Card className={className}>
             <CardContent>
-                <Typography gutterBottom variant='h5'>
-                    {certificate.name}
-                </Typography>
-                <Typography variant='subtitle2'>
-                    Дата истечения сертификата: {certificateExpiresDate}
-                </Typography>
-                <Typography variant='subtitle2'>
-                    Дата истечения протокола: {protocolExpiresDate}
-                </Typography>
+                <Typography gutterBottom variant='h5'>{certificate.name}</Typography>
+                <DescriptionTextBlock>Дата истечения сертификата: {certificateExpiresDate}</DescriptionTextBlock>
+                <DescriptionTextBlock>Дата истечения протокола: {protocolExpiresDate}</DescriptionTextBlock>
             </CardContent>
             <CardActions>
             {

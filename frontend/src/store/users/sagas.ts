@@ -17,9 +17,9 @@ function* loadUserListWorker(api: ApiClient) {
 
 function* registerUserWorker(api: ApiClient, action: RegisterUserAction) {
     try {
-        call(() => api.user.create(action.payload));
+        yield call(() => api.user.create(action.payload));
         // put(actions.registerUserSuccess()) // TODO: toast
-        put(actions.loadUserList());
+        yield put(actions.loadUserList());
     } catch (error) {
         // put(actions.registerUserError()) // TODO: toast
     }

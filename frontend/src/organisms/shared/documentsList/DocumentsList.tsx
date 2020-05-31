@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
-import { DocumentsListProps, DocumentsListItem, DocumentsListAction } from './interfaces';
-import { DocumentsListContainer, DocumentsListContentContainer, DocumentsListActionsContainer, StyledFab, StyledDocumentCard } from './styles';
+import { DocumentsListProps, DocumentsListItem } from './interfaces';
+import { StyledFab, StyledDocumentCard } from './styles';
 import { Tooltip } from '@material-ui/core';
+import { UiActionDescription } from '../../../types/uiActionDescription';
+import CardsListTemplate from '../../../templates/cardsListTemplate/CardListTemplate';
 
 const DocumentsList: FC<DocumentsListProps> = ({
     documents,
@@ -12,38 +14,35 @@ const DocumentsList: FC<DocumentsListProps> = ({
     // TODO func to callback
     // TODO if no both userProtocol and userCertificate
     return (
-        <DocumentsListContainer>
-            <DocumentsListContentContainer>
-                {
-                    documents.map(({userCertificate, userProtocol, certificate}: DocumentsListItem) => (
-                        <StyledDocumentCard
-                            key={certificate.id}
-                            certificate={certificate}
-                            userProtocol={userProtocol}
-                            userCertificate={userCertificate}
-                            onCertificateClick={userCertificate && (() => onCertificateClick(userCertificate))}
-                            onProtocolClick={userProtocol && (() => onProtocolClick(userProtocol))}
-                        />
-                    ))
-                }
-            </DocumentsListContentContainer>
-            <DocumentsListActionsContainer>
-                {
-                    actions?.map((action: DocumentsListAction, idx: number) => (
-                        <Tooltip hidden title={action.tooltip || ''}>
-                            <StyledFab 
-                                key={idx} 
-                                onClick={action.onClick} 
-                                variant={action.text ? 'extended' : 'round'}
-                            >
-                                {action.icon}
-                                {action.text}
-                            </StyledFab>
-                        </Tooltip>
-                    ))
-                }
-            </DocumentsListActionsContainer>
-        </DocumentsListContainer>
+        <CardsListTemplate
+            actions={(
+                actions?.map((action: UiActionDescription, idx: number) => (
+                    <Tooltip hidden title={action.tooltip || ''}>
+                        <StyledFab 
+                            key={idx} 
+                            onClick={action.onClick} 
+                            variant={action.text ? 'extended' : 'round'}
+                        >
+                            {action.icon}
+                            {action.text}
+                        </StyledFab>
+                    </Tooltip>
+                ))
+            )}
+        >
+            {
+                documents.map(({userCertificate, userProtocol, certificate}: DocumentsListItem) => (
+                    <StyledDocumentCard
+                        key={certificate.id}
+                        certificate={certificate}
+                        userProtocol={userProtocol}
+                        userCertificate={userCertificate}
+                        onCertificateClick={userCertificate && (() => onCertificateClick(userCertificate))}
+                        onProtocolClick={userProtocol && (() => onProtocolClick(userProtocol))}
+                    />
+                ))
+            }
+        </CardsListTemplate>
     );
 }
 

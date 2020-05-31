@@ -1,3 +1,5 @@
+import { PositionDto } from './Position';
+
 export interface UserDto {
     id: string;
 
@@ -5,7 +7,7 @@ export interface UserDto {
 
     userName: string;
 
-    positionId?: number;
+    position?: PositionDto;
 
     firstName: string;
 
@@ -16,6 +18,8 @@ export interface UserDto {
     contactPhoneNumber?: string;
 
     birthdayDate: Date;
+
+    avatar?: string;
 }
 
 export interface UserCreateDto {

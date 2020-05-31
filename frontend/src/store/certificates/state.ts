@@ -1,4 +1,7 @@
+import { CertificateDto } from '../../api/models/Certificate';
+
 export default interface CertificatesState {
-    certificates: [],
-    loading: boolean
+    certificates: CertificateDto[];
+
+    loading: boolean;
 }

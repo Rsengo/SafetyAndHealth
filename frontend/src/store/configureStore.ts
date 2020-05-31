@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, Reducer } from 'redux'
-import createSagaMiddleware, { SagaMiddleware, Saga } from 'redux-saga'
+import createSagaMiddleware, { SagaMiddleware } from 'redux-saga'
 import { ReduxAction, ReduxStore, ReduxState, SagaExtraParams } from './interfaces';
 import createRootReducer from './createRootReducer';
 import rootSaga from './rootSaga';

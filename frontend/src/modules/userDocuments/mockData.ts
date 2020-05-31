@@ -13,7 +13,12 @@ export const docsData: DocumentsListItem[] = [
         id: 1,
         number: '123',
         startDate: new Date(),
-        certificateId: 1,
+        certificate: {
+          id: 1,
+          name: 'kek',
+          hasGroup: false,
+          validationTime: 100500
+        },
         expiresDate: new Date(),
         userId: '0000-0000-0000-0000',
         file: {
@@ -33,7 +38,12 @@ export const docsData: DocumentsListItem[] = [
         id: 1,
         number: '123',
         startDate: new Date(),
-        certificateId: 1,
+        certificate: {
+          id: 1,
+          name: 'kek',
+          hasGroup: false,
+          validationTime: 100500
+        },
         group: 1,
         expiresDate: new Date(),
         userId: '0000-0000-0000-0000',
@@ -54,7 +64,12 @@ export const docsData: DocumentsListItem[] = [
         id: 1,
         number: '123',
         startDate: new Date(),
-        certificateId: 1,
+        certificate: {
+          id: 1,
+          name: 'kek',
+          hasGroup: false,
+          validationTime: 100500
+        },
         group: 1,
         expiresDate: new Date(),
         userId: '0000-0000-0000-0000',
@@ -67,7 +82,12 @@ export const docsData: DocumentsListItem[] = [
         id: 1,
         number: '123',
         startDate: new Date(),
-        certificateId: 1,
+        certificate: {
+          id: 1,
+          name: 'kek',
+          hasGroup: false,
+          validationTime: 100500
+        },
         expiresDate: new Date(),
         userId: '0000-0000-0000-0000',
         file: {

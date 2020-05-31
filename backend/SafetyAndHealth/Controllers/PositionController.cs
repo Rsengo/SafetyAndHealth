@@ -40,8 +40,9 @@ namespace SafetyAndHealth.Controllers
             var position = _mapper.Map<Position>(dto);
             _context.Positions.Add(position);
             await _context.SaveChangesAsync();
+            var response = _mapper.Map<PositionDto>(position);
 
-            return Ok();
+            return Ok(response);
         }
 
         [HttpPut]
@@ -50,8 +51,9 @@ namespace SafetyAndHealth.Controllers
             var position = _mapper.Map<Position>(dto);
             _context.Positions.Update(position);
             await _context.SaveChangesAsync();
+            var response = _mapper.Map<PositionDto>(position);
 
-            return Ok();
+            return Ok(response);
         }
 
         [HttpDelete("{id}")]

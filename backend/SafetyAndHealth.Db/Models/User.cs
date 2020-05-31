@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
 namespace SafetyAndHealth.Db.Models
@@ -17,6 +18,8 @@ namespace SafetyAndHealth.Db.Models
 
         //TODO format
         public string ContactPhoneNumber { get; set; }
+
+        public DateTime BirthdayDate { get; set; }
 
         public ICollection<UserCertificate> UserCertificates { get; set; }
 

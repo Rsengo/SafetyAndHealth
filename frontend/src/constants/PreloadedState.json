@@ -24,6 +24,6 @@
     },
     "certificatesTable": {
         "table": null,
-        "loading": null
+        "loading": false
     }
 }

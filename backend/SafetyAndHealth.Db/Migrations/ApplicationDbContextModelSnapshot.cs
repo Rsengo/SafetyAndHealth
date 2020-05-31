@@ -149,6 +149,90 @@ namespace SafetyAndHealth.Db.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("SafetyAndHealth.Db.Models.Briefing", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("InstructorId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("MediaUrl")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<long>("TextFileId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("TypeId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InstructorId");
+
+                    b.HasIndex("TextFileId")
+                        .IsUnique();
+
+                    b.HasIndex("TypeId");
+
+                    b.ToTable("Briefing");
+                });
+
+            modelBuilder.Entity("SafetyAndHealth.Db.Models.BriefingJournalRecord", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<long>("BriefingId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("DateOfPassage")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BriefingId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("BriefingJournalRecord");
+                });
+
+            modelBuilder.Entity("SafetyAndHealth.Db.Models.BriefingType", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BriefingType");
+                });
+
             modelBuilder.Entity("SafetyAndHealth.Db.Models.Certificate", b =>
                 {
                     b.Property<long>("Id")
@@ -239,8 +323,14 @@ namespace SafetyAndHealth.Db.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("integer");
 
+                    b.Property<DateTime>("BirthdayDate")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ContactPhoneNumber")
                         .HasColumnType("text");
 
                     b.Property<string>("Email")
@@ -341,7 +431,8 @@ namespace SafetyAndHealth.Db.Migrations
 
                     b.HasIndex("CertificateId");
 
-                    b.HasIndex("FileId");
+                    b.HasIndex("FileId")
+                        .IsUnique();
 
                     b.HasIndex("UserId");
 
@@ -375,7 +466,8 @@ namespace SafetyAndHealth.Db.Migrations
 
                     b.HasIndex("CertificateId");
 
-                    b.HasIndex("FileId");
+                    b.HasIndex("FileId")
+                        .IsUnique();
 
                     b.HasIndex("UserId");
 
@@ -433,6 +525,42 @@ namespace SafetyAndHealth.Db.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SafetyAndHealth.Db.Models.Briefing", b =>
+                {
+                    b.HasOne("SafetyAndHealth.Db.Models.User", "Instructor")
+                        .WithMany()
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SafetyAndHealth.Db.Models.FileDescription", "TextFile")
+                        .WithOne()
+                        .HasForeignKey("SafetyAndHealth.Db.Models.Briefing", "TextFileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SafetyAndHealth.Db.Models.BriefingType", "Type")
+                        .WithMany()
+                        .HasForeignKey("TypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("SafetyAndHealth.Db.Models.BriefingJournalRecord", b =>
+                {
+                    b.HasOne("SafetyAndHealth.Db.Models.Briefing", "Briefing")
+                        .WithMany()
+                        .HasForeignKey("BriefingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SafetyAndHealth.Db.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("SafetyAndHealth.Db.Models.DocumentTemplate", b =>
                 {
                     b.HasOne("SafetyAndHealth.Db.Models.FileDescription", "File")
@@ -457,8 +585,8 @@ namespace SafetyAndHealth.Db.Migrations
                         .IsRequired();
 
                     b.HasOne("SafetyAndHealth.Db.Models.FileDescription", "File")
-                        .WithMany()
-                        .HasForeignKey("FileId")
+                        .WithOne()
+                        .HasForeignKey("SafetyAndHealth.Db.Models.UserCertificate", "FileId")
                         .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("SafetyAndHealth.Db.Models.User", "User")
@@ -476,8 +604,8 @@ namespace SafetyAndHealth.Db.Migrations
                         .IsRequired();
 
                     b.HasOne("SafetyAndHealth.Db.Models.FileDescription", "File")
-                        .WithMany()
-                        .HasForeignKey("FileId")
+                        .WithOne()
+                        .HasForeignKey("SafetyAndHealth.Db.Models.UserProtocol", "FileId")
                         .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("SafetyAndHealth.Db.Models.User", "User")

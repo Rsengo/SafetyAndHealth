@@ -5,6 +5,7 @@ import { TextField } from '@material-ui/core';
 import { Autocomplete, RenderInputParams } from '@material-ui/lab';
 import { PositionDto } from '../../../api/models/Position';
 
+// TODO: birthday date
 const UserRegistrationForm: FC<UserRegistrationFormProps> = ({
     userInfo,
     positions,

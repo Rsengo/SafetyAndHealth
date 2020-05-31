@@ -43,8 +43,9 @@ namespace SafetyAndHealth.Controllers
             var userProtocol = _mapper.Map<UserProtocol>(dto);
             _context.UserProtocols.Add(userProtocol);
             await _context.SaveChangesAsync();
+            var response = _mapper.Map<UserProtocolDto>(userProtocol);
 
-            return Ok();
+            return Ok(response);
         }
 
         [HttpPut]
@@ -53,8 +54,9 @@ namespace SafetyAndHealth.Controllers
             var userProtocol = _mapper.Map<UserProtocol>(dto);
             _context.UserProtocols.Update(userProtocol);
             await _context.SaveChangesAsync();
+            var response = _mapper.Map<UserProtocolDto>(userProtocol);
 
-            return Ok();
+            return Ok(response);
         }
 
         [HttpDelete("{id}")]

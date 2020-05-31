@@ -17,9 +17,9 @@ function* loadUserCertificatesWorker(api: ApiClient) {
 
 function* createUserCertificateWorker(api: ApiClient, action: types.CreateUserCertificatesAction) {
     try {
-        call(() => api.userCertificate.create(action.payload));
+        yield call(() => api.userCertificate.create(action.payload));
         // put(actions.registerUserSuccess()) // TODO: toast
-        put(actions.loadUserCertificates());
+        yield put(actions.loadUserCertificates());
     } catch (error) {
         // put(actions.registerUserError()) // TODO: toast
     }

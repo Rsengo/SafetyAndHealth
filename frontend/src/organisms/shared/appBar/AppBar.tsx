@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 
-import { useStyles } from '../sideMenu/styled';
+import { useStyles } from './styled';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -15,12 +15,22 @@ const CustomAppBar: FC<any> = ({
 }) => {
     const classes = useStyles();
 
+    // TODO: fix as soon as possible
+    const styles: any = { 
+        zIndex: 1201,
+    };
+
+    if (sideMenuOpened) {
+        styles.width = `calc(100% - 240px)`
+    }
+
     return (
         <AppBar
             position="fixed"
             className={clsx(classes.appBar, {
                 [classes.appBarShift]: sideMenuOpened,
             })}
+            style={styles}
         >
         <Toolbar>
             <IconButton

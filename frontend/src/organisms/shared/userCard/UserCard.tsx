@@ -12,7 +12,6 @@ const UserCard: FC<UserCardProps> = ({
     contactPhoneNumber,
     avatar
 }) => {
-    // TODO remove inline styles
     // TODO birthdayDate?
     return (
         <UserCardContainer>

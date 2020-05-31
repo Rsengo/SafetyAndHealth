@@ -17,9 +17,9 @@ function* loadCertificatesWorker(api: ApiClient) {
 
 function* createCertificateWorker(api: ApiClient, action: types.CreateCertificatesAction) {
     try {
-        call(() => api.certificate.create(action.payload));
+        yield call(() => api.certificate.create(action.payload));
         // TODO: toast
-        put(actions.loadCertificates());
+        yield put(actions.loadCertificates());
     } catch (error) {
         // TODO: toast
     }
@@ -27,9 +27,9 @@ function* createCertificateWorker(api: ApiClient, action: types.CreateCertificat
 
 function* updateCertificateWorker(api: ApiClient, action: types.UpdateCertificatesAction) {
     try {
-        call(() => api.certificate.update(action.payload));
+        yield call(() => api.certificate.update(action.payload));
         // TODO: toast
-        put(actions.loadCertificates());
+        yield put(actions.loadCertificates());
     } catch (error) {
         // TODO: toast
     }
@@ -37,9 +37,9 @@ function* updateCertificateWorker(api: ApiClient, action: types.UpdateCertificat
 
 function* deleteCertificateWorker(api: ApiClient, action: types.DeleteCertificatesAction) {
     try {
-        call(() => api.certificate.delete(action.payload));
+        yield call(() => api.certificate.delete(action.payload));
         // TODO: toast
-        put(actions.loadCertificates());
+        yield put(actions.loadCertificates());
     } catch (error) {
         // TODO: toast
     }

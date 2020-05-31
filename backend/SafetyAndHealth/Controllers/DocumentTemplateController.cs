@@ -74,7 +74,9 @@ namespace SafetyAndHealth.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok();
+            var response = _mapper.Map<DocumentTemplateDto>(document);
+
+            return Ok(response);
         }
 
         [HttpDelete("{id}")]

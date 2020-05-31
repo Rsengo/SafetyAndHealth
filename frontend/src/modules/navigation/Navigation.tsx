@@ -10,6 +10,7 @@ import UserDocuments from '../userDocuments/UserDocuments';
 import CertificatesTable from '../certificatesTable/CertificatesTable';
 import DictionariesAdministration from '../dictionariesAdministration/DictionariesAdministration';
 import UserRegistration from '../userRegistration/UserRegistration';
+import BriefingsLibrary from '../briefingsLibrary/BriefingsLibrary';
 
 const Navigation: FC = () => {
     return (
@@ -29,6 +30,9 @@ const Navigation: FC = () => {
                 </Route>
                 <Route path='/userRegistration'>
                     <UserRegistration />
+                </Route>
+                <Route path='/briefingsLibrary'>
+                    <BriefingsLibrary />
                 </Route>
                 <Route exact path='/'>
                     <Redirect to='/users' />

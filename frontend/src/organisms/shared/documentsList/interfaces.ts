@@ -1,6 +1,7 @@
 import { UserCertificateDto } from "../../../api/models/UserCertificate";
 import { UserProtocolDto } from "../../../api/models/UserProtocol";
 import { CertificateDto } from "../../../api/models/Certificate";
+import { UiActionDescription } from "../../../types/uiActionDescription";
 
 export interface DocumentsListItem {
     userCertificate?: UserCertificateDto;
@@ -10,20 +11,10 @@ export interface DocumentsListItem {
     certificate: CertificateDto;
 }
 
-export interface DocumentsListAction {
-    icon: React.ReactNode;
-
-    tooltip?: string;
-
-    text?: string
-
-    onClick: () => void;
-}
-
 export interface DocumentsListProps {
     documents: DocumentsListItem[];
 
-    actions?: DocumentsListAction[];
+    actions?: UiActionDescription[];
 
     onCertificateClick: (certificate: UserCertificateDto) => void
 

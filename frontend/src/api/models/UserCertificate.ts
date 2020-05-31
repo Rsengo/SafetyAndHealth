@@ -1,20 +1,21 @@
 import { FileDescriptionDto } from "./FileDescription";
 import { BaseDtoEntity } from "./BaseModel";
+import { CertificateDto } from "./Certificate";
 
 export interface UserCertificateDto extends BaseDtoEntity {
     number: string;
 
-    startDate: Date | string;
+    startDate: Date;
 
-    group: number | null;
+    group?: number;
 
     userId: string;
 
     file: FileDescriptionDto;
 
-    certificateId: number;
+    certificate: CertificateDto;
 
-    expiresDate: Date | string | null;
+    expiresDate?: Date;
 }
 
 export interface UserCertificateCreateUpdateDto extends BaseDtoEntity {

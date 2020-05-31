@@ -21,8 +21,8 @@ namespace SafetyAndHealth.Db.Mappings
                 .IsRequired();
 
             builder.HasOne(x => x.File)
-                .WithMany()
-                .HasForeignKey(x => x.FileId)
+                .WithOne()
+                .HasForeignKey<UserCertificate>(x => x.FileId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(x => x.User)

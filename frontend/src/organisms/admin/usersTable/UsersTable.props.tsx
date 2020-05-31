@@ -4,18 +4,17 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import DescriptionIcon from '@material-ui/icons/DescriptionOutlined';
 import {Column, Action} from 'material-table';
-import { UserTableEntity } from './interfaces';
 import FormatConstants from '../../../constants/FormatConstants.json';
+import { getInitials } from '../../../utils/userUtils';
+import { UserDto } from '../../../api/models/User';
 
 export const title: string = 'Пользователи системы';
 
-export const columns: Column<UserTableEntity>[] = [
+export const columns: Column<UserDto>[] = [
     {
         field: 'name',
         title: 'ФИО',
-        render: (data: UserTableEntity): string => data.middleName 
-            ? `${data.lastName} ${data.firstName[0]}. ${data.middleName[0]}.` 
-            : `${data.lastName} ${data.firstName[0]}.`
+        render: (data: UserDto): string => getInitials(data)
     },
     {
         field: 'userName',
@@ -27,12 +26,13 @@ export const columns: Column<UserTableEntity>[] = [
     },
     {
         field: 'position',
-        title: 'Должность'
+        title: 'Должность',
+        render: (data: UserDto) => data.position?.name
     },
     {
         field: 'birthdayDate',
         title: 'Дата рождения',
-        render: (data: UserTableEntity) => dayjs(data.birthdayDate).format(FormatConstants.dateFormat)
+        render: (data: UserDto) => dayjs(data.birthdayDate).format(FormatConstants.dateFormat)
     },
     {
         field: 'contactPhoneNumber',
@@ -40,7 +40,7 @@ export const columns: Column<UserTableEntity>[] = [
     }
 ];
 
-export const actions: Action<UserTableEntity>[] = [
+export const actions: Action<UserDto>[] = [
     {
         icon: () => (<PersonAddIcon />),
         tooltip: 'Добавить пользователя',
