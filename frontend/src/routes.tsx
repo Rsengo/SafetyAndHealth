@@ -11,6 +11,7 @@ import { DictionaryType } from './organisms/admin/dictionariesList/dictionaryTyp
 import CertificatesDictionaryTableModule from './modules/certificatesDictionaryTable/CertificatesDictionaryTableModule';
 import PositionsDictionaryTableModule from './modules/positionsDictionaryTable/PositionsDictionaryTableModule';
 import BriefingTypesDictionaryTable from './modules/briefingTypesDictionaryTable/BriefingTypesDictionaryTableModule';
+import BriefingJournal from './modules/briefingJournal/BriefingJournal';
 
 export const rootRoutes: RouteDescription[] = [
     {
@@ -36,6 +37,10 @@ export const rootRoutes: RouteDescription[] = [
     {
         path: '/briefingsLibrary',
         component: BriefingsLibrary
+    },
+    {
+        path: '/briefingJournal',
+        component: BriefingJournal
     },
     {
         path: '/',

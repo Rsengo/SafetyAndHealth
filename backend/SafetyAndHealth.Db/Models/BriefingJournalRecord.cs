@@ -11,6 +11,6 @@ namespace SafetyAndHealth.Db.Models
 
         public string UserId { get; set; }
 
-        public DateTime DateOfPassage { get; set; }
+        public DateTime? DateOfPassage { get; set; }
     }
 }
